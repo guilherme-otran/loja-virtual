@@ -19,14 +19,6 @@ ActiveRecord::Schema.define(:version => 20121221131659) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "codes", :force => true do |t|
-    t.text     "description"
-    t.float    "price"
-    t.string   "category"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
   create_table "products", :force => true do |t|
     t.string   "code"
     t.string   "description"
