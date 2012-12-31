@@ -1,6 +1,12 @@
 LojaVirtual::Application.routes.draw do
-  resources :products
 
+  namespace :admin do
+    root :to => 'welcome#index'
+    resources :products
+  end
+  
+  resources :products
+  
   root :to => 'welcome#index'
 
 
