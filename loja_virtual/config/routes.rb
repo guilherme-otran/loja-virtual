@@ -1,5 +1,13 @@
 LojaVirtual::Application.routes.draw do
+
+  namespace :admin do
+    root :to => 'welcome#index'
+    resources :products
+  end
+  
   resources :products
+  
+  root :to => 'welcome#index'
 
 
   # The priority is based upon order of creation:
@@ -14,7 +22,7 @@ LojaVirtual::Application.routes.draw do
   # This route can be invoked with purchase_url(:id => product.id)
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
+  #  resources :products
 
   # Sample resource route with options:
   #   resources :products do

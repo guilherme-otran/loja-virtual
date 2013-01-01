@@ -1,4 +1,4 @@
-<%= simple_form_for(@product, :html => {:multipart => true}) do |f| %>
+<%= simple_form_for([:admin, @product], :html => {:multipart => true}) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
@@ -8,13 +8,16 @@
     <%= f.select :category_id, Category.all.collect { |c| [c.name, c.id] } %>
   </div>
 
+	
+
   <div class"form-image">
 	 <p>
 	    <%= f.file_field :image %>
 	  </p>
 	</div>
 
-  
+	
+
   <div class="form-actions">
     <%= f.button :submit %>
   </div>

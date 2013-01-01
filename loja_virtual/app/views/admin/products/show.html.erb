@@ -1,5 +1,5 @@
+<p id="notice"><%= notice %></p>
 
-<!-- <p id="notice"><%= notice %></p> -->
 <p>
   <b>Code:</b>
   <%= @product.code %>
@@ -25,4 +25,5 @@
 	<%= image_tag @product.image_url(:thumb) if @product.image? %>
 </p>
 
-<%= link_to 'Back', products_path %>
+<%= link_to 'Edit', edit_admin_product_path(@product) %> |
+<%= link_to 'Back', admin_products_path %>

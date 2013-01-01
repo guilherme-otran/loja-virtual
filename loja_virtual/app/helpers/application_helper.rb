@@ -22,22 +22,25 @@ module ApplicationHelper
   end
   
   # TODO retornar action de Logoff
+  #logoff
   def destroy_user_session_path
     ''
   end
   
-  # TODO retornar action de Login
+  #create user
   def new_user_session_path
     ''
   end
   
-  # TODO Editar cadastro. VERIFICAR SE REALMENTE DEVE SER FEITO
+  #user register edit.
+  # Checar se sera necessario
   def edit_user_registration_path
     ''
   end
   
-  # TODO Novo cadastro
+  #Novo usuario
   def new_user_registration_path
     ''
   end
+  
 end
