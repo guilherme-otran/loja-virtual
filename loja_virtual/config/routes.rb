@@ -5,7 +5,7 @@ LojaVirtual::Application.routes.draw do
     resources :products
   end
   
-  resources :products
+  resources :products, only: [:show, :index]
   
   root :to => 'welcome#index'
 
