@@ -1,27 +1,28 @@
-
-<table>
-  <tr>
-    <th>Code</th>
-    <th>Description</th>
-    <th>Price</th>
-    <th>Category</th>
-    <th>Image</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @products.each do |product| %>
-  <tr>
-    <td><%= product.code %></td>
-    <td><%= product.description %></td>
-    <td><%= product.price %></td>
-    <td><%= product.category.name %></td>
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Description</th>
+      <th>Category</th>
+      <th>Price</th>
+      <th>Image</th>
+      <th></th>
+    </tr>
+  </thead>
+  
+  <tbody>
+  <% @products.each do |product| %>
+    <tr>
+      <td><%= product.code %></td>
+      <td><%= product.description %></td>
+      <td><%= product.category.name %></td>
+      <td><%= product.price %></td>
     
-    <!-- Coloca um img com a imagem do produto se esta existir -->
-    <td><%= image_tag product.image_url(:thumb) if product.image? %></td>
+      <!-- Shows the product's image if the image exists. -->
+      <td> <%= image_tag product.image_url(:thumb) if product.image? %> </td>
     
-    <td><%= link_to 'Show', product %></td>    
-  </tr>
-<% end %>
+      <td><%= link_to 'Show', product, :class => 'btn' %></td>    
+    </tr>
+  <% end %>    
+  </tbody>
 </table>

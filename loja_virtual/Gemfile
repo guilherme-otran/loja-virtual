@@ -6,7 +6,7 @@ gem 'rails', '3.2.9'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-gem 'bootstrap-sass'
+gem 'bootstrap-sass' #, :git => 'git://github.com/jasny/bootstrap.git'
 gem 'simple_form'
 gem "rmagick"
 gem "carrierwave"

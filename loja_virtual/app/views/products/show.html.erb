@@ -1,28 +1,25 @@
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Description</th>
+      <th>Category</th>
+      <th>Price</th>
+      <th>Image</th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <tr>
+      <td> <%= @product.code %> </td>
+      <td> <%= @product.description %> </td>
+      <td> <%= @product.price %> </td>
+      <td> <%= @product.category.name %> </td>
+	    <td> <%= image_tag @product.image_url(:thumb) if @product.image? %> </td>
+	  </tr>
+  </tbody>
+</table>
 
-<!-- <p id="notice"><%= notice %></p> -->
-<p>
-  <b>Code:</b>
-  <%= @product.code %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @product.description %>
-</p>
-
-<p>
-  <b>Price:</b>
-  <%= @product.price %>
-</p>
-
-<p>
-  <b>Category:</b>
-  <%= @product.category.name %>
-</p>
-
-
-<p>
-	<%= image_tag @product.image_url(:thumb) if @product.image? %>
-</p>
-
-<%= link_to 'Back', products_path %>
+<div class="form-actions">
+  <%= link_to 'Back', products_path, class: 'btn' %>
+</div>
