@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <table class="table table-bordered">
   <thead>
     <th>Code</th>
@@ -23,32 +22,3 @@
   <%= link_to 'Edit', edit_admin_product_path(@product), :class => 'btn btn-info' %>
   <%= link_to 'Back', admin_products_path, :class => 'btn' %>
 </div>
-=======
-<p>
-  <b>Code:</b>
-  <%= @product.code %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @product.description %>
-</p>
-
-<p>
-  <b>Price:</b>
-  <%= @product.price %>
-</p>
-
-<p>
-  <b>Category:</b>
-  <%= @product.category.name %>
-</p>
-
-
-<p>
-	<%= image_tag @product.image_url(:thumb) if @product.image? %>
-</p>
-
-<%= link_to 'Edit', edit_admin_product_path(@product) %> |
-<%= link_to 'Back', admin_products_path %>
->>>>>>> 7e6c2a3cbc3d12dd09b5f0d010530d2de8c81c41
