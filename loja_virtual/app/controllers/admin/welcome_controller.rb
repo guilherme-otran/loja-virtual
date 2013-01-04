@@ -1,5 +1,4 @@
 class Admin::WelcomeController < ApplicationController
-  
   #GET /
   def index
       respond_to do |format|
@@ -7,5 +6,4 @@ class Admin::WelcomeController < ApplicationController
       format.json { render json: @products }
       end
   end
-
-end;
+end

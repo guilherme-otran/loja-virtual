@@ -1,14 +1,14 @@
 LojaVirtual::Application.routes.draw do
 
+  # Admin pages
   namespace :admin do
     root :to => 'welcome#index'
     resources :products
   end
   
-  resources :products, only: [:show, :index]
-  
+  # Client pages
   root :to => 'welcome#index'
-
+  resources :products, only: [:show, :index]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
