@@ -1,10 +1,10 @@
 <table class="table table-bordered">
   <thead>
-    <th>Code</th>
-    <th>Description</th>
-    <th>Category</th>
-    <th>Price</th>
-    <th>Image</th>
+    <th> <%= Product.human_attribute_name(:code) %> </th>
+    <th> <%= Product.human_attribute_name(:description) %> </th>
+    <th> <%= Product.human_attribute_name(:category) %> </th>
+    <th> <%= Product.human_attribute_name(:price) %> </th>
+    <th> <%= Product.human_attribute_name(:image) %> </th>
   </thead>
   
   <tbody>
@@ -19,6 +19,6 @@
 </table>
 
 <div class="form-actions">
-  <%= link_to 'Edit', edit_admin_product_path(@product), :class => 'btn btn-info' %>
-  <%= link_to 'Back', admin_products_path, :class => 'btn' %>
+  <%= link_to t(:edit), edit_admin_product_path(@product), :class => 'btn btn-info' %>
+  <%= link_to t(:back), admin_products_path, :class => 'btn' %>
 </div>

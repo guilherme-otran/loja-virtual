@@ -1,11 +1,11 @@
-<h1>Listing products</h1>
+<h1><%= t(:'products.list') %> </h1>
 
 <table class="table table-bordered table-hover">
   <thead>
-    <th>Code</th>
-    <th>Description</th>
-    <th>Price</th>
-    <th>Category</th>
+    <th> <%= Product.human_attribute_name(:code) %> </th>
+    <th> <%= Product.human_attribute_name(:description) %> </th>
+    <th> <%= Product.human_attribute_name(:category) %> </th>
+    <th> <%= Product.human_attribute_name(:price) %> </th>
     <th></th>
   </thead>
 
@@ -18,12 +18,12 @@
       <td><%= product.category.name %></td>
   
       <td>  
-        <%= link_to 'Show', admin_product_path(product), :class => 'btn' %> &nbsp
-        <%= link_to 'Edit', edit_admin_product_path(product), :class => 'btn btn-info' %> &nbsp
-        <%= link_to 'Delete', 
+        <%= link_to t(:show), admin_product_path(product), :class => 'btn' %> &nbsp
+        <%= link_to t(:edit), edit_admin_product_path(product), :class => 'btn btn-info' %> &nbsp
+        <%= link_to t(:delete), 
             admin_product_path(product), 
             method: :delete, 
-            data: { confirm: 'Are you sure?' }, 
+            data: { confirm: t(:'notice.are_you_sure') }, 
             :class => 'btn btn-inverse' %>
       </td>
     </tr>
@@ -32,5 +32,5 @@
 </table>
 
 <div class="form-actions">
-  <%= link_to 'New Product', new_admin_product_path, :class => 'btn' %>
+  <%= link_to t(:'products.new'), new_admin_product_path, :class => 'btn' %>
 </div>

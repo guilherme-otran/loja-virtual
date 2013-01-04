@@ -1,11 +1,11 @@
 <table class="table table-bordered">
   <thead>
     <tr>
-      <th>Code</th>
-      <th>Description</th>
-      <th>Category</th>
-      <th>Price</th>
-      <th>Image</th>
+      <th> <%= Product.human_attribute_name(:code) %> </th>
+      <th> <%= Product.human_attribute_name(:description) %> </th>
+      <th> <%= Product.human_attribute_name(:category) %> </th>
+      <th> <%= Product.human_attribute_name(:price) %> </th>
+      <th> <%= Product.human_attribute_name(:image) %> </th>
     </tr>
   </thead>
   
@@ -21,5 +21,5 @@
 </table>
 
 <div class="form-actions">
-  <%= link_to 'Back', products_path, class: 'btn' %>
+  <%= link_to t(:back), products_path, class: 'btn' %>
 </div>
