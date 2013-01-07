@@ -5,7 +5,7 @@
     <%= f.input :code %>
     <%= f.input :description, :as => :text, :input_html => { :rows => 3 } %>     
     <%= f.input :price %>
-    <%= f.input :category, collection: form_select_categories %>
+    <%= f.input :category_id, collection: form_select_categories, prompt: "Selecione" %>
   </div>
 
   <div class"form-image">

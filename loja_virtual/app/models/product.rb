@@ -11,7 +11,7 @@ class Product < ActiveRecord::Base
   
   #Validations
   validates :code, uniqueness: true
-  validates :code, :description, :price, :category, presence: true
+  validates :code, :description, :price, :category_id, presence: true
   validates :price, numericality: { only_float: true, greater_than: 0 }
   validates :image, 
     allow_blank: true, 
