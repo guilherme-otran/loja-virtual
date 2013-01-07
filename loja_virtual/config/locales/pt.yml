@@ -244,6 +244,7 @@ pt:
         description: Descrição
         price: Preço
         image: Imagem
+        category_id: Categoria
         category: Categoria
       category:
         name: Nome

@@ -12,6 +12,7 @@ gem 'bootstrap-sass' #, :git => 'git://github.com/jasny/bootstrap.git'
 gem 'simple_form'
 gem "rmagick"
 gem "carrierwave"
+gem 'contest'
 
 # Gems used only for assets and not required
 # in production environments by default.

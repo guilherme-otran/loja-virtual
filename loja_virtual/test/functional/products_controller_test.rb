@@ -1,4 +1,5 @@
 require 'test_helper'
+require 'contest'
 
 class ProductsControllerTest < ActionController::TestCase
   setup do
