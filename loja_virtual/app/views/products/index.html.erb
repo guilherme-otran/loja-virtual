@@ -1,59 +1,31 @@
-<table class="table table-bordered table-hover">
-  <thead>
-    <tr>
-      <th> <%= Product.human_attribute_name(:code) %> </th>
-      <th> <%= Product.human_attribute_name(:description) %> </th>
-      <th> <%= Product.human_attribute_name(:category) %> </th>
-      <th> <%= Product.human_attribute_name(:price) %> </th>
-      <th> <%= Product.human_attribute_name(:image) %> </th>
-      <th></th>
-    </tr>
-  </thead>
-  
-  <tbody>
+<!-- <h1> <%= t(:title) %> </h1> -->
+
+<div class="products">
   <% @products.each do |product| %>
-    <tr>
-      <td><%= product.code %></td>
-      <td><%= product.description %></td>
-      <td><%= product.category.name %></td>
-      <td><%= product.price %></td>
-    
-      <!-- Shows the product's image if the image exists. -->
-      <td> <%= image_tag product.image_url(:thumb) if product.image? %> </td>
-    
-      <td><%= link_to t(:show), product, :class => 'btn' %></td>    
-    </tr>
-  <% end %>    
-  </tbody>
-</table>
-
-
-<div class="span4">
-  <div class="products">
-    <div>
-      <%= Product.human_attribute_name(:image) %>
-    </div>
-  
-    <div>
-      <%= Product.human_attribute_name(:code) %>
-    </div>
-  
-    <div>
-      <%= Product.human_attribute_name(:description) %>
-    </div>
-  
-    <div class="test">
-      <div>
-        <%= Product.human_attribute_name(:category) %>
+    <div class="span4"> 
+      <div class="image">
+         <%= image_tag product.image_url(:thumb), :class => 'img-polaroid'  if product.image? %>
       </div>
-    
+
       <div>
-        <%= Product.human_attribute_name(:price) %>
+        <%= product.code %> - 
+        <%= product.description %>
+      </div>
+
+      <div class="category">
+        <%= product.category.name %>
+      </div>
+
+      <div class="price">
+        <%= product.price %>
+      </div>
+
+      <div>
+        <button class="btn btn-info">
+          <i class="icon-shopping-cart"></i> 
+          <%= t(:"products.add_to_cart") %>
+        </button>
       </div>
     </div>
-  
-    <div>
-      <input type="button" class="btn" value="teste">
-    </div>
-  </div>
+  <% end %>
 </div>

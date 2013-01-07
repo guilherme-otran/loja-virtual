@@ -4,6 +4,7 @@ pt:
   delete: Deletar
   back: Voltar
   cancel: Cancelar
+  title: Loja Virtual
   
   menu:
     sign_up: Registrar-se
@@ -14,12 +15,19 @@ pt:
   
   notice:
     are_you_sure: Você tem certeza?
+    error:
+      form_contents: Por favor verifique os erros abaixo.
   
   products:
     list: Listando Produtos
     new: Novo Produto
     edit: Editar Produto
     manage: Administrar Produtos
+    add_to_cart: Adicionar ao carrinho
+    created: Produto cadastrado com sucesso.
+    edited: Produto editado com sucesso.
+    category:
+      select: Selecione
   
   date:
     abbr_day_names:
