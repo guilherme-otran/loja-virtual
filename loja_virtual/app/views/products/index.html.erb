@@ -26,3 +26,34 @@
   <% end %>    
   </tbody>
 </table>
+
+
+<div class="span4">
+  <div class="products">
+    <div>
+      <%= Product.human_attribute_name(:image) %>
+    </div>
+  
+    <div>
+      <%= Product.human_attribute_name(:code) %>
+    </div>
+  
+    <div>
+      <%= Product.human_attribute_name(:description) %>
+    </div>
+  
+    <div class="test">
+      <div>
+        <%= Product.human_attribute_name(:category) %>
+      </div>
+    
+      <div>
+        <%= Product.human_attribute_name(:price) %>
+      </div>
+    </div>
+  
+    <div>
+      <input type="button" class="btn" value="teste">
+    </div>
+  </div>
+</div>
