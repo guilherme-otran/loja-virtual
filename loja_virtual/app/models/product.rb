@@ -8,10 +8,12 @@ class Product < ActiveRecord::Base
   # Uploaders.
   mount_uploader :image, ImageUploader
   
-  # Validations.
-  validates :code, uniqueness: true
+  #Validations
+  validates :code,  uniqueness: true
   validates :code, :description, :price, :category_id, presence: true
-  validates :price, numericality: { only_float: true, greater_than: 0 }
+  validates :code,  numericality: { only_integer: true, greater_than: 0 }
+  validates :code,  length: { maximum: 15 }
+  validates :price, numericality: { only_float:   true, greater_than: 0 }
   validates :image, 
     allow_blank: true, 
     format: {

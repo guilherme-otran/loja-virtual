@@ -1,23 +1,22 @@
 jQuery(function($){
 
   var fix_currency = function(){
-    var value = $(this).val();
-    
-    value = value.replace('/\s+/g', "");
-    var validate = value.replace(',' , '.');
+  	var value = $(this).val();
 
-    if(isNaN(validate)){
-      value = "";
-    }
+  	var validate = value.replace(',' , "");
+  	if(isNaN(validate)){
+    	value = "";
+  	}
 
-    if(value === ""){ 
-      $(this).val("0,00");
-    } else {
-      value = parseFloat(value.replace(/[R$\s]/g, "").replace(',' , '.'));
-      $(this).val(value.toFixed(2).replace('.' , ','));
-    }
-  }
-  //fix_currency.apply($(".currency_field"));
+  	if(value === ""){ 
+  		value = "0,00";
+  	} else {
+    	value = parseFloat(value.replace(/[R$\s]/g, "").replace(',' , '.'));
+    	value = value.toFixed(2).replace('.' , ',');
+  	}
+
+		$(this).val(value);
+	}
 
   $(".form-inputs").delegate(".currency_field", "focusout", fix_currency);
 
@@ -26,4 +25,5 @@ jQuery(function($){
       $(this).val("");
     }
   });
+
 });

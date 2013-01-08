@@ -41,7 +41,6 @@ class Admin::ProductsController < ApplicationController
   # POST admin/products.json
   def create
     params[:product][:price] = format_float params[:product][:price]
-
     @product = Product.new(params[:product])
 
     respond_to do |format|
@@ -60,7 +59,6 @@ class Admin::ProductsController < ApplicationController
 
   def update
     params[:product][:price] = format_float params[:product][:price]
-
     @product = Product.find(params[:id])
 
     respond_to do |format|
@@ -90,6 +88,6 @@ class Admin::ProductsController < ApplicationController
   private
   
   def format_float(price)
-    price.gsub(',', '.')
+    price.gsub ",", "."
   end
 end

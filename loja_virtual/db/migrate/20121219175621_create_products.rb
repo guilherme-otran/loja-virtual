@@ -2,10 +2,10 @@ class CreateProducts < ActiveRecord::Migration
   def change
     create_table :products do |t|
       # Data
-      t.string :code,         null: false, limit: 15
-      t.text   :description,  null: false
-      t.float  :price,        null: false
-      t.string :image
+      t.string  :code,         null: false, limit: 15
+      t.text    :description,  null: false
+      t.float   :price,        null: false
+      t.string  :image
       
       t.timestamps
       
