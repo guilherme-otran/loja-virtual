@@ -1,5 +1,7 @@
 LojaVirtual::Application.routes.draw do
 
+  get "cart/show"
+
   # Admin pages
   namespace :admin do
     root :to => 'welcome#index'
@@ -8,6 +10,7 @@ LojaVirtual::Application.routes.draw do
   
   # Client pages
   root :to => 'welcome#index'
+
   resources :products, only: [:show, :index] do
     post "add_to_cart", on: :member
   end
