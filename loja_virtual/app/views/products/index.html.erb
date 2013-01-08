@@ -20,13 +20,7 @@
 
       <div>
         <%= link_to ('<i class="icon-shopping-cart"></i> '+t(:"products.add_to_cart")).html_safe, 
-          edit_admin_product_path(product), :class => 'btn btn-info' %>
-        
-        <!-- 
-        <button class="btn btn-info">
-          <i class="icon-shopping-cart"></i> 
-          <%= t(:"products.add_to_cart") %>
-        </button> -->
+          add_to_cart_product_path(product), :class => 'btn-add-to-cart btn btn-info', :data => {id: product.id} %>
       </div>
     </div>
   <% end %>
