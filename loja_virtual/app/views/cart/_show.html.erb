@@ -3,7 +3,7 @@
 <div class="cart">
   <% products.each do |product| %>
     <div class="cart-product">
-       <%= (products.index(product)+1).to_s + ". " + product.code  + " : " + product.description + " x" + items[products.index(product)].quantity.to_s%>
+       <%= product_number(product) + ". " + product.code  + " : " + product.description + " x" + product_quantity(product) %>
     </div>
   <% end %>
 </div>

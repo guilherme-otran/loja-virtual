@@ -1,1 +1,6 @@
-alert("Produto adicionado no carrinho com sucesso." + <%= @product.id %>)
+$.ajax({
+	url: "/cart/show",
+	success: function(page){	  
+	  $(".shop-cart").html(page);
+	}
+})

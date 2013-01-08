@@ -12,7 +12,7 @@ gem 'bootstrap-sass' #, :git => 'git://github.com/jasny/bootstrap.git'
 gem 'simple_form'
 gem "rmagick"
 gem "carrierwave"
-gem 'contest'
+# gem 'contest'
 gem 'kaminari'
 gem 'pry'
 

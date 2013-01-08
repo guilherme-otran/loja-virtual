@@ -1,4 +1,5 @@
 class CartController < ApplicationController
+  
   def show
     
     @items = cart.items
@@ -7,8 +8,9 @@ class CartController < ApplicationController
     # GET /cart/show.html
     # GET /cart/show.json    
     respond_to do |format|
-      format.html #
-      format.json { render json: @items }
+      format.html { render layout: false  } 
+      format.json { render json:   @items }
     end
   end
+  
 end
