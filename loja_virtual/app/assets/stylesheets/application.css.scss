@@ -30,40 +30,6 @@ div.x {
   background-color: green;
 }
 
-.products {
-	text-align: center;
-	display: inline;
-
-	.category {
-		float: left;
-		margin-left: 10px;
-		color: #777777;
-	}
-	
-	.price {
-		float: right;
-		margin-right: 10px;
-		color: red;
-	}
-	
-	.btn {
-		margin-top: 5px;
-	}
-	
-	.span4 {
-		margin-left: 10px;
-		margin-bottom: 10px;
-		height: 235px;
-	}
-	
-	.image {
-		margin-top: 5px;
-		margin-bottom:10px;
-		height: 150px;
-		line-height:150px;
-	}
-}
-
 .form-inputs { 
   textarea {
     resize: none;

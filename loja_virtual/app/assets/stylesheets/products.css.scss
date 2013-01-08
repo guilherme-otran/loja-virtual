@@ -1,3 +1,48 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.products {
+	text-align: center;
+	display: inline;
+
+	.category {
+		float: left;
+		margin-left: 10px;
+		color: #777777;
+	}
+	
+	.price {
+		float: right;
+		margin-right: 10px;
+		color: red;
+	}
+	
+	.btn {
+		margin-top: 5px;
+	}
+	
+	.span3 {
+		margin-left: 10px;
+		margin-bottom: 10px;
+	}
+	
+	.image {
+		margin-top: 5px;
+		margin-bottom:10px;
+		height: 150px;
+		line-height:150px;
+	}
+	
+	.code {
+		color: #777777;
+	}
+	
+	.btn-cart {
+		border-right: 2em solid #E0E0E0;
+		
+		.btn {
+			width: 100%;
+		}
+	}
+}

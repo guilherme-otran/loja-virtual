@@ -8,7 +8,9 @@ LojaVirtual::Application.routes.draw do
   
   # Client pages
   root :to => 'welcome#index'
-  resources :products, only: [:show, :index]
+  resources :products, only: [:show, :index] do
+    post "add_to_cart", on: :member
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
