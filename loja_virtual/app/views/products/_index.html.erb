@@ -1,5 +1,5 @@
 <div class="products">
-  <% @products.each do |product| %>
+  <% products.each do |product| %>
     <div class="span3"> 
       <div class="image">
         <%= image_tag product.image_url(:thumb), :class => 'img-polaroid'  if product.image? %>
@@ -27,4 +27,4 @@
     </div>
   <% end %>
 </div>
-<%= paginate @products %>
+<%= paginate products %>
