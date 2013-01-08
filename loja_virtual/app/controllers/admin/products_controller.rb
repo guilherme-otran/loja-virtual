@@ -41,6 +41,7 @@ class Admin::ProductsController < ApplicationController
   # POST admin/products.json
   def create
     params[:product][:price] = format_float params[:product][:price]
+
     @product = Product.new(params[:product])
 
     respond_to do |format|
@@ -56,7 +57,10 @@ class Admin::ProductsController < ApplicationController
 
   # PUT admin/products/1
   # PUT admin/products/1.json
-  def update    
+
+  def update
+    params[:product][:price] = format_float params[:product][:price]
+
     @product = Product.find(params[:id])
 
     respond_to do |format|

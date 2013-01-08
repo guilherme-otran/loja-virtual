@@ -5,4 +5,9 @@ module Admin::ProductsHelper
         [c.name, c.id]
       end
   end
+
+  def format_product_price
+    return "" if (@product.price.nil?)
+    number_to_currency(@product.price).gsub("R$ ", "")
+  end
 end
