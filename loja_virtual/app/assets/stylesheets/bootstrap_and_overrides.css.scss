@@ -12,6 +12,15 @@ body { padding-top: 60px; }
 .products {
 	.btn {
 		width: 100%;
+		max-width:344px;
 	}
 }
+
+.pagination {
+	margin-top: 25px;
+	margin-right: 25px;
+	text-align: right;
+	display: block;
+}
+
 @import "bootstrap-responsive";

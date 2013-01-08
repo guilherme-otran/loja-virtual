@@ -51,9 +51,8 @@ div.x {
 	
 	.span4 {
 		margin-left: 10px;
-		margin-top: 25px;
-		max-height: 220px;
-		min-height: 220px;
+		margin-bottom: 10px;
+		height: 235px;
 	}
 	
 	.image {
@@ -65,7 +64,7 @@ div.x {
 }
 
 .form-inputs { 
-  textarea{
+  textarea {
     resize: none;
   }
 }

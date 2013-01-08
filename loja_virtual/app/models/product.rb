@@ -1,15 +1,14 @@
 class Product < ActiveRecord::Base
-  
-  # Mass-storange acessors
+  # Mass-storange acessors.
   attr_accessible :category_id, :code, :description, :price, :image, :category
 
-  # Relations
+  # Relations.
   belongs_to :category
   
-  # Uploaders
+  # Uploaders.
   mount_uploader :image, ImageUploader
   
-  #Validations
+  # Validations.
   validates :code, uniqueness: true
   validates :code, :description, :price, :category_id, presence: true
   validates :price, numericality: { only_float: true, greater_than: 0 }
