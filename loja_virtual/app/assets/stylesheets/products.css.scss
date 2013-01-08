@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .products {
-	text-align: center;
+/*	text-align: center;*/
 	display: inline;
 
 	.category {
@@ -25,6 +25,7 @@
 	.span3 {
 		margin-left: 10px;
 		margin-bottom: 10px;
+		text-align: center;
 	}
 	
 	.image {
@@ -36,6 +37,10 @@
 	
 	.code {
 		color: #777777;
+	}
+
+	.info {
+		margin: 0 5px 0;
 	}
 	
 	.btn-cart {

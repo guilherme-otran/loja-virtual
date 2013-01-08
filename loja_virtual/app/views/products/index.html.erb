@@ -1,11 +1,11 @@
-<div class="products">
+<ul class="products">
   <% @products.each do |product| %>
-    <div class="span3"> 
+    <li class="span3"> 
       <div class="image">
         <%= image_tag product.image_url(:thumb), :class => 'img-polaroid'  if product.image? %>
       </div>
 
-      <div>
+      <div class="info">
         <span class="code"> <%= product.code %> </span> - 
         <%= product.description %>
       </div>
@@ -24,7 +24,7 @@
         <%= link_to ('<i class="icon-shopping-cart"></i> ' + t(:"products.add_to_cart")).html_safe, 
           add_to_cart_product_path(product), :class => 'btn-add-to-cart btn btn-info', :data => {id: product.id} %>
       </div>
-    </div>
+    </li>
   <% end %>
-</div>
+</ul>
 <%= paginate @products %>
