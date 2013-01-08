@@ -4,9 +4,9 @@ development:
   reconnect: false
   database: loja_virtual
   pool: 5
-  username: root
-  password: 
-  host: localhost
+  username: bdgui
+  password: RubyOnRails
+  host: server
   
 test:
   adapter: mysql2
@@ -14,9 +14,9 @@ test:
   reconnect: false
   database: loja_virtual_test
   pool: 5
-  username: root
-  password: 
-  host: localhost
+  username: bdgui
+  password: RubyOnRails
+  host: server
  
 production:
   adapter: mysql2

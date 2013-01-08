@@ -1,14 +1,20 @@
 class WelcomeController < ApplicationController
+  
+  include ProductsController::ProductsPagingAndFilter
+
   #GET /
-  def index
+  def index    
+    # Filter and pagination for products
+    # Initializes the var @products and @categories
+    initialize_products_instance_var
     
-      @products = Product.page(params[:page]).per(4)
-      @items = cart.items
-      @cart_products = @items.collect { |item| Product.find(item.product_id) }
+    # Load cart items
+    @items = cart.items
+    @cart_products = @items.collect { |item| Product.find(item.product_id) }
     
-      respond_to do |format|
+    respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @products }
-      end
+    end
   end
 end

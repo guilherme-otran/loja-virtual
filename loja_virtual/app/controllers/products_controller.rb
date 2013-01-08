@@ -3,14 +3,30 @@ class ProductsController < ApplicationController
   # Filters  
   # before_filter :check_session_for_user_cart
   
+  module ProductsPagingAndFilter
+    def initialize_products_instance_var
+      # Load categories for filter products
+      @categories = Category.all
+      
+      # If has a category, filter and put to @products
+      if params[:category].nil?
+        @products = Product.page(params[:page]).per(4)
+      else
+        @products = Product.page(params[:page]).per(4).where(category_id: params[:category])
+      end
+    end
+  end  
+  include ProductsPagingAndFilter  
+  
   # GET /products
   # GET /products.json
   def index
-    @products = Product.page(params[:page]).per(4)
+    # Initializes the @products and @categories
+    initialize_products_instance_var
     
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @products }
+      format.json { render json: products_filter }
     end
   end
 
