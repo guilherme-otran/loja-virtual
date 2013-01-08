@@ -40,8 +40,9 @@ class Admin::ProductsController < ApplicationController
   # POST admin/products
   # POST admin/products.json
   def create
+    params[:product][:price] = format_float params[:product][:price]
     @product = Product.new(params[:product])
-    
+
     respond_to do |format|
       if @product.save
         format.html { redirect_to admin_product_path(@product), notice: t(:'products.created') }
@@ -55,10 +56,11 @@ class Admin::ProductsController < ApplicationController
 
   # PUT admin/products/1
   # PUT admin/products/1.json
-  def update
+  def update    
     @product = Product.find(params[:id])
 
     respond_to do |format|
+      params[:product][:price] = format_float params[:product][:price]
       if @product.update_attributes(params[:product])
         format.html { redirect_to admin_product_path(@product), notice: t(:'products.edited')  }
         format.json { head :no_content }
@@ -79,5 +81,11 @@ class Admin::ProductsController < ApplicationController
       format.html { redirect_to admin_products_url }
       format.json { head :no_content }
     end
+  end
+  
+  private
+  
+  def format_float(price)
+    price.gsub(',', '.')
   end
 end
