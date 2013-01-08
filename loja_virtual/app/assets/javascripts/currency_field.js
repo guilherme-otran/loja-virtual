@@ -19,8 +19,8 @@ jQuery(function($){
   }
 
   $(".form-inputs").delegate(".currency_field", "focusout", fix_currency);
-
-  fix_currency.apply($(".currency_field"));
+  if ($(".currency_field").length > 0)
+    fix_currency.apply($(".currency_field"));
 
   $(".form-inputs").delegate(".currency_field", "focusin", function(){
     if ($(this).val() === "0,00") {
