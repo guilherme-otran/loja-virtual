@@ -1,5 +1,4 @@
 class ProductsController < ApplicationController
-  
   # Filters  
   # before_filter :check_session_for_user_cart
   
@@ -10,9 +9,9 @@ class ProductsController < ApplicationController
       
       # If has a category, filter and put to @products
       if params[:category].nil?
-        @products = Product.page(params[:page]).per(4)
+        @products = Product.page(params[:page]).per(8)
       else
-        @products = Product.page(params[:page]).per(4).where(category_id: params[:category])
+        @products = Product.page(params[:page]).per(8).where(category_id: params[:category])
       end
     end
   end  
@@ -23,7 +22,7 @@ class ProductsController < ApplicationController
   def index
     # # Initializes the @products and @categories
     # initialize_products_instance_var
-    @products = Product.search(params[:search]).page(params[:page]).per(4)
+    @products = Product.search(params[:search]).page(params[:page]).per(8)
 
     respond_to do |format|
       format.js

@@ -12,7 +12,6 @@ class WelcomeController < ApplicationController
                 end
 
     @products = @products.page(params[:page]).per(8)
-
     @items = cart.items
     @cart_products = @items.collect { |item| Product.find(item.product_id) }
     

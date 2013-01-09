@@ -16,15 +16,16 @@
 //= require jquery-ui-1.9.2.custom.min
 //= require_tree .
 
-jQuery(function($){
-  var removeButtons = $(".btn-remove-from-cart");
-  removeButtons.on("click", function(event){
-    event.preventDefault();
-    $.ajax({
-      dataType: "script",
-      url: $(this).attr("href"),
-      data: { id: $(this).data.id },
-      type: "DELETE"
-    })
-  })
-})
+// jQuery(function() {
+// 	$('.pagination').delegate('a', 'click', function(event) {
+// 		event.preventDefault();
+// 		var productsDiv = $('.all-products');
+// 		$.ajax({
+// 			url: $(this).attr('href'), // this é o cara que chamou o evento
+// 			type: 'GET',
+// 			success: function(page) {
+// 				productsDiv.html(page);
+// 			}
+// 		})
+// 	})
+// })

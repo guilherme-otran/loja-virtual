@@ -12,6 +12,10 @@ pt:
     login:        Fazer login
     logout:       Deslogar
     home:         Principal
+    
+  search:
+    default:      Pesquisar por...
+    button_text:  Pesquisar
   
   views:
     pagination:
@@ -25,6 +29,7 @@ pt:
     cart:   Carrinho
     finish: Finalizar compra
     add:    Comprar
+    count:  Qtde.
   
   notice:
     are_you_sure: Você tem certeza?

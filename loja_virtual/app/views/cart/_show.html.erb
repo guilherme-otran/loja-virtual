@@ -2,31 +2,42 @@
   <h4><%= t(:'cart.cart') %></h4>
   <div class="cart">
     <table class="table table-bordered table-hover">
-      <tr>
-        <th>#</th><th>Código</th><th>Produto</th><th>Quantidade</th><td></td>
-    <% products.each do |product| %>
-      <tr>
-        <th>
-          <%= product_number(product) %>
-        </th>
-        <td>
-          <%= product.code  %>
-        </td>
-        <td>
-          <%= product.description %>
-        </td>
-        <td>
-          <input type="text" value="<%= product_quantity(product) %>" class="txt-product-quantity"></input>
-        </td>
-        <td>
-          <%= link_to ('<i class="icon-remove"></i> ').html_safe(),
-            remove_from_cart_product_path(product),
-            :class => 'btn-remove-from-cart',
-            :data => {id: product.id}
-          %>
-        </td>
-      </tr>
-    <% end %>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th><%= Product.human_attribute_name(:code) %></th>
+          <th><%= Product.human_attribute_name(:description) %></th>
+          <th><%= t(:'cart.count') %></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% products.each do |product| %>
+          <tr>
+            <th>
+              <%= product_number(product) %>
+            </th>
+            <td>
+              <%= product.code  %>
+            </td>
+            <td>
+              <%= product.description %>
+            </td>
+            <td>
+              <div align="center">
+                <input type="text" value="<%= product_quantity(product) %>" class="txt-product-quantity"></input>
+              </div>
+            </td>
+            <td>
+              <%= link_to ('<i class="icon-remove"></i> ').html_safe(),
+                remove_from_cart_product_path(product),
+                :class => 'btn-remove-from-cart',
+                :data => {id: product.id}
+              %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
     </table>
   </div>
   <button class="btn btn-info"> <%= t(:'cart.finish') %> </button>

@@ -1,5 +1,14 @@
+.all-products {
+	display: inline;
+	min-width: 800px;
+}
+
 .clear {
 	clear: both;
+}
+
+.filter-form {
+	margin-left: 8px;
 }
 
 .form-inputs { 
@@ -8,12 +17,11 @@
 	}
 }
 
-.all-products {
-	display: inline;
-	min-width: 800px;
-}
-
 .shop-cart {
-	min-width: 350px;
 	float: right;
+	/* */
+	position: fixed;
+	right: 55px;
+	/* */
+	width: 360px;
 }

@@ -26,7 +26,7 @@ jQuery(function($){
     event.preventDefault();
     $.ajax({
       dataType: "script",
-      url: this.action,
+      url: this.action+'.js',
       data: $(this).serialize()
     })
   });
