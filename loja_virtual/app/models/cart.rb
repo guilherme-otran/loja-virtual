@@ -19,4 +19,12 @@ class Cart
   def items_count
     @items.map(&:quantity).inject(:+) || 0
   end
+  
+  def product_quantity(product)
+    @items[product_index(product)].quantity
+  end
+  
+  def product_index(product)
+    @items.index { |item| item.product_id == product.id }
+  end
 end
