@@ -7,10 +7,10 @@ class WelcomeController < ApplicationController
     # Filter and paginations
     @products = Product.search(params[:search])
     @products = Kaminari.paginate_array(@products).page(params[:page]).per(4)
-    
-    # Load cart items
-    @items = cart.items
-    @cart_products = @items.collect { |item| Product.find(item.product_id) }
+
+      #@products = Product.page(params[:page]).per(8)
+      @items = cart.items
+      @cart_products = @items.collect { |item| Product.find(item.product_id) }
     
     respond_to do |format|
       format.html # index.html.erb

@@ -10,18 +10,19 @@
 <% end %>
 
 <div class="products">
-  <% @products.each do |product| %>
-    <div class="span3"> 
+
+  <% products.each do |product| %>
+    <div class="span2"> 
       <div class="image">
-        <%= image_tag product.image_url(:thumb), :class => 'img-polaroid'  if product.image? %>
+        <%= image_tag product.image_url(:thumb)  if product.image? %>
       </div>
 
-      <div>
+      <div class="clearfix info">
         <span class="code"> <%= product.code %> </span> - 
-        <%= product.description %>
+        <span class="desc"> <%= product.description %> </desc>
       </div>
       
-      <div>
+      <div class="clearfix">
         <div class="category">
           <%= product.category.name %>
         </div>
@@ -32,10 +33,11 @@
       </div>
 
       <div class="btn-cart">
-        <%= link_to ('<i class="icon-shopping-cart"></i> ' + t(:"products.add_to_cart")).html_safe, 
+        <%= link_to ('<i class="icon-shopping-cart"></i> ' + t(:"cart.add")).html_safe, 
           add_to_cart_product_path(product), :class => 'btn-add-to-cart btn btn-info', :data => {id: product.id} %>
       </div>
     </div>
   <% end %>
+  <div class="clear"></div>
 </div>
 <%= paginate @products %>

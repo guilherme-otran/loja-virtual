@@ -1,3 +1,54 @@
 // Place all the styles related to the cart controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.container-cart {
+	float: right;
+	width: auto;
+	max-width: 360px;
+	padding-left: 10px;
+	padding-bottom: 10px;
+	border-radius: 4px;
+	position: relative;
+	
+	h4 {
+		margin: 0 0 5px 0;
+		position: absolute;
+		left: 25px;
+		background-color: white;
+		padding: 0 2px 0;
+	}
+	
+	.cart {
+		background-color: #FFF;
+		padding: 10px;
+		border-radius: 5px;
+	
+		.table {
+			width: 100%;
+			
+			td, th {
+				vertical-align: middle;
+			}
+		}
+	
+		.table td {
+			font-size: 12px;
+			padding: 4px;
+		}
+	
+		a:hover {
+			background: none;
+		}
+	
+		.txt-product-quantity {
+			max-width: 20px;
+			max-height: 15px;
+			font-size: 12px;
+		}
+		
+		td {
+			line-height: 100%;
+		}
+	}
+}

@@ -1,12 +1,33 @@
-<h6>Translate @views/cart/show.html.erb</h6>
-<h4>Your cart (FIXME: Translate!)</h4>
-<div class="cart">
-  <% products.each do |product| %>
-    <div class="cart-product">
-       <%= product_number(product) + ". " + product.code  + " : " + product.description + " x" + product_quantity(product) %>
-    </div>
-  <% end %>
+<div class="container-cart">
+  <h4><%= t(:'cart.cart') %></h4>
+  <div class="cart">
+    <table class="table table-bordered table-hover">
+      <tr>
+        <th>#</th><th>Código</th><th>Produto</th><th>Quantidade</th><td></td>
+    <% products.each do |product| %>
+      <tr>
+        <th>
+          <%= product_number(product) %>
+        </th>
+        <td>
+          <%= product.code  %>
+        </td>
+        <td>
+          <%= product.description %>
+        </td>
+        <td>
+          <input type="text" value="<%= product_quantity(product) %>" class="txt-product-quantity"></input>
+        </td>
+        <td>
+          <%= link_to ('<i class="icon-remove"></i> ').html_safe(),
+            remove_from_cart_product_path(product),
+            :class => 'btn-remove-from-cart',
+            :data => {id: product.id}
+          %>
+        </td>
+      </tr>
+    <% end %>
+    </table>
+  </div>
+  <button class="btn btn-info"> <%= t(:'cart.finish') %> </button>
 </div>
-<button>Finalizar Compra</button>
-
-
