@@ -16,4 +16,7 @@ body { padding-top: 60px; }
 	display: block;
 }
 
+.btn-info:visited, .btn-danger:visited {
+	color: white;
+}
 @import "bootstrap-responsive";

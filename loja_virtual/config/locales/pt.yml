@@ -22,8 +22,9 @@ pt:
       first:    "&lt;&lt; Primeira"
   
   cart:
-    your: Seu carrinho
+    your:   Seu carrinho
     finish: Finalizar compra
+    add:    Comprar
   
   notice:
     are_you_sure: Você tem certeza?
@@ -35,7 +36,6 @@ pt:
     new:          Novo Produto
     edit:         Editar Produto
     manage:       Administrar Produtos
-    add_to_cart:  Adicionar ao carrinho
     created:      Produto cadastrado com sucesso.
     edited:       Produto editado com sucesso.
     category:

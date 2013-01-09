@@ -1,15 +1,29 @@
-<h4><%= t(:'cart.your') %></h4>
-<div class="cart">
-  <table class="table table-bordered table-hover">
-  <% products.each do |product| %>
-    <tr>
-      <div class="cart-product">
-         <%= product_number(product) + ". " + product.code  + " : " + product.description + " x" + product_quantity(product) %>
-      </div>
-    </tr>
-  <% end %>
-  </table>
+<div class="container-cart">
+  <h4><%= t(:'cart.your') %></h4>
+  <div class="cart">
+    <table class="table table-bordered table-hover">
+    <% products.each do |product| %>
+      <tr>
+        <!--<div class="cart-product">-->
+        <th>
+          <%= product_number(product) %> <!-- + ". " + -->
+        </th>
+        <td>
+          <%= product.code  %> <!--+ " : " + -->
+        </td>
+        <td>
+          <%= product.description %> <!--+ " x" +--> 
+        </td>
+        <td>
+          <input type="text" value="<%= product_quantity(product) %>" class="price"></input>
+        </td>
+        <!--</div>-->
+        <td>
+          <a href="#"><i class="icon-remove"></i></a>
+        </td>
+      </tr>
+    <% end %>
+    </table>
+  </div>
+  <button class="btn btn-info"> <%= t(:'cart.finish') %> </button>
 </div>
-<button class="btn btn-info"> <%= t(:'cart.finish') %> </button>
-
-

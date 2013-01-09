@@ -1,3 +1,28 @@
 // Place all the styles related to the cart controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.container-cart {
+/*	right: -110px; */
+/*	background-color: #E0E0E0;*/
+	float: right;
+	width: auto;
+	max-width: 330px;
+	padding-left: 10px;
+	padding-bottom: 10px;
+	border-radius: 4px;
+}
+
+.cart {
+	.table {
+		width: 30%;
+	}
+	
+	a:hover {
+		background: none;
+	}
+	
+	input.price {
+		max-width: 20px;
+	}
+}
