@@ -22,16 +22,7 @@ class Product < ActiveRecord::Base
     }
   
   #Methods
-  def self.search(search)
-    # if search
-    #   find(:all, :conditions => ['code LIKE ?', "%#{search}%"])
-    # else
-    #   find(:all)
-    # end
-    if search
-      where("description LIKE ?", "%#{search}%")
-    else
-      all
-    end
+  def self.search(conditions = {})
+    where("description LIKE ?", "%#{conditions["description"]}%") if conditions["description"]
   end
 end

@@ -1,7 +1,20 @@
+<%= form_for :search, :url => products_path, :method => "GET", :html => { :id => "search_form" } do |f| %>
+  <select name="filter_by">
+    <option id="default" selected="selected">Pesquisar por...</option>
+    <option id="0">Categoria</option>
+    <option id="1">Descrição</option>
+  </select>
+
+  <%= f.text_field :description, :id => "search_field" %>
+  <%= f.submit "Search", :name => nil, :id => "btn_search" %>
+<% end %>
+
 <div class="all-products">
   <%= render partial: "products/index", locals: { products: @products }%>
-</div>
+  <div class="clear"></div>
 
+  <%= paginate @products %>
+</div>
 <div class="shop-cart clearfix">
   <%= render :partial => "cart/show", locals: { items: @items, products: @cart_products} %>
 </div>

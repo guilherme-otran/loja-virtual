@@ -1,1 +1,6 @@
-<%= render partial: "index" %>
+<div class="products">
+  <%= render partial: "index", locals: { products: @products } %>
+  <div class="clear"></div>
+</div>
+
+<%= paginate @products %>

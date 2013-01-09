@@ -21,6 +21,13 @@ jQuery(function($){
       type: "DELETE"
     })
   })    
-  
-	
+
+  $("#search_form").on("submit", function(event){
+    event.preventDefault();
+    $.ajax({
+      dataType: "script",
+      url: this.action,
+      data: $(this).serialize()
+    })
+  });
 })

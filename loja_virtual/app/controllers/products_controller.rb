@@ -26,6 +26,7 @@ class ProductsController < ApplicationController
     @products = Product.search(params[:search]).page(params[:page]).per(4)
 
     respond_to do |format|
+      format.js
       format.html # index.html.erb
       format.json { render json: products_filter }
     end
