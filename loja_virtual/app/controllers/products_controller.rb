@@ -1,5 +1,4 @@
 class ProductsController < ApplicationController
-  before_filter :root_if_not_ajax, only: [:index]
   include ProductFilterPaginator
   
   # GET /products/category/1
@@ -11,7 +10,8 @@ class ProductsController < ApplicationController
     load_filtered_and_pagined_products
     
     respond_to do |format|
-      format.html { render partial: "index" }
+      format.html { render root_path }
+      format.js   { render partial: "index" }
     end
   end
   
@@ -38,14 +38,6 @@ class ProductsController < ApplicationController
       format.html
       format.js
       format.json { render json: @product }
-    end
-  end
-  
-  private
-  
-  def root_if_not_ajax
-    if !request.xhr?
-      redirect_to root_path
     end
   end
 end

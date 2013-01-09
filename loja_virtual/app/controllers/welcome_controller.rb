@@ -17,8 +17,7 @@ class WelcomeController < ApplicationController
       format.html do
         render partial: "products/index" if request.xhr?
       end
-
-      format.js
+      format.js { render partial: "products/index" }
       format.json { render json: @products }
     end
   end

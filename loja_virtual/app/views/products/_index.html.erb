@@ -1,4 +1,12 @@
 <div id="products_and_paginator">
+  <div class="categories-links">
+    <%= link_to t(:all_categories), root_path, class: "category-link", data: { "ajax-href" => products_path } %>
+
+    <% @categories.each do |category| %>
+      <%= link_to category.name, category_path(category, :category_id => category.id), class: "category-link", 
+          data: { "ajax-href" => products_category_path(category) } %>
+    <% end %>
+  </div>
 	<div class="products">
 	  <% @products.each do |product| %>
 	    <div class="span3"> 
