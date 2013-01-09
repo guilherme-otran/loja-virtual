@@ -1,35 +1,20 @@
 class ProductsController < ApplicationController
+  before_filter :root_if_not_ajax, only: [:index]
+  include ProductFilterPaginator
   
-  # Filters  
-  # before_filter :check_session_for_user_cart
-  
-  module ProductsPagingAndFilter
-    def initialize_products_instance_var
-      # Load categories for filter products
-      @categories = Category.all
-      
-      # If has a category, filter and put to @products
-      if params[:category].nil?
-        @products = Product.page(params[:page]).per(4)
-      else
-        @products = Product.page(params[:page]).per(4).where(category_id: params[:category])
-      end
-    end
-  end  
-  include ProductsPagingAndFilter  
-  
-  # GET /products
-  # GET /products.json
+  # GET /products/category/1
+  # GET /products/
   def index
-    # Initializes the @products and @categories
-    initialize_products_instance_var
+    @categories = Category.all
+    
+    # Initialize @products
+    load_filtered_and_pagined_products
     
     respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: products_filter }
+      format.html { render partial: "index" }
     end
   end
-
+  
   # GET /products/1
   # GET /products/1.json
   def show
@@ -53,6 +38,14 @@ class ProductsController < ApplicationController
       format.html
       format.js
       format.json { render json: @product }
+    end
+  end
+  
+  private
+  
+  def root_if_not_ajax
+    if !request.xhr?
+      redirect_to root_path
     end
   end
 end

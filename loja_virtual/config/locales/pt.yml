@@ -5,7 +5,7 @@ pt:
   back:   Voltar
   cancel: Cancelar
   title:  Loja Virtual
-  
+  all_categories: Todas
   menu:
     sign_up:      Registrar-se
     edit_account: Editar conta
