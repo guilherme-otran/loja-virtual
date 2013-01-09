@@ -29,14 +29,25 @@ class ProductsController < ApplicationController
   # POST /products/1/add_to_cart.js
   # POST /products/1/add_to_cart.json
   def add_to_cart
-    @product = Product.find(params[:id])
-    
-    cart.add_item(@product.id)
+    cart.add_item(params[:id].to_i)
     
     respond_to do |format|
-      format.html
+      format.html { redirect_to :root }
       format.js
-      format.json { render json: @product }
+      format.json { render json: cart }
     end
   end
+  
+  # DELETE /products/1/add_to_cart
+  # DELETE /products/1/add_to_cart.js
+  # DELETE /products/1/add_to_cart.json
+  def remove_from_cart
+    cart.remove_item(params[:id].to_i)
+    
+    respond_to do |format|
+      format.html { redirect_to :root }
+      format.js
+      format.json { render json: cart }
+    end
+  end  
 end

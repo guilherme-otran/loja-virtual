@@ -2,24 +2,28 @@
   <h4><%= t(:'cart.your') %></h4>
   <div class="cart">
     <table class="table table-bordered table-hover">
+      <tr>
+        <th>#</th><th>Código</th><th>Produto</th><th>Quantidade</th><td></td>
     <% products.each do |product| %>
       <tr>
-        <!--<div class="cart-product">-->
         <th>
-          <%= product_number(product) %> <!-- + ". " + -->
+          <%= product_number(product) %>
         </th>
         <td>
-          <%= product.code  %> <!--+ " : " + -->
+          <%= product.code  %>
         </td>
         <td>
-          <%= product.description %> <!--+ " x" +--> 
+          <%= product.description %>
         </td>
         <td>
-          <input type="text" value="<%= product_quantity(product) %>" class="price"></input>
+          <input type="text" value="<%= product_quantity(product) %>" class="txt-product-quantity"></input>
         </td>
-        <!--</div>-->
         <td>
-          <a href="#"><i class="icon-remove"></i></a>
+          <%= link_to ('<i class="icon-remove"></i> ').html_safe(),
+            remove_from_cart_product_path(product),
+            :class => 'btn-remove-from-cart',
+            :data => {id: product.id}
+          %>
         </td>
       </tr>
     <% end %>

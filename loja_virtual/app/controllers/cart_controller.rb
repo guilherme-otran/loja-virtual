@@ -12,5 +12,4 @@ class CartController < ApplicationController
       format.json { render json:   @items }
     end
   end
-  
 end

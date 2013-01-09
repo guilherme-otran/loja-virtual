@@ -15,3 +15,16 @@
 //= require bootstrap
 //= require jquery-ui-1.9.2.custom.min
 //= require_tree .
+
+jQuery(function($){
+  var removeButtons = $(".btn-remove-from-cart");
+  removeButtons.on("click", function(event){
+    event.preventDefault();
+    $.ajax({
+      dataType: "script",
+      url: $(this).attr("href"),
+      data: { id: $(this).data.id },
+      type: "DELETE"
+    })
+  })
+})

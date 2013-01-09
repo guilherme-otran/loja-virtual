@@ -16,6 +16,14 @@ class Cart
     end
   end
   
+  def remove_item(product_id)
+    current_item = @items.index { |item| item.product_id == product_id }
+    
+    if current_item
+      @items.delete_at(current_item)
+    end
+  end
+  
   def items_count
     @items.map(&:quantity).inject(:+) || 0
   end
