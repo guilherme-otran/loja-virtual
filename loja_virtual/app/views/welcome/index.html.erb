@@ -3,6 +3,6 @@
   <%= render partial: "products/index", locals: { products: @products }%>
 </div>
 
-<div class="shop-cart">
+<div class="shop-cart clearfix">
   <%= render :partial => "cart/show", locals: { items: @items, products: @cart_products} %>
 </div>

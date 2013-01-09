@@ -18,13 +18,13 @@
       <td><%= product.category.name %></td>
   
       <td>  
-        <%= link_to ('<i class="icon-search"></i> ' + t(:show)).html_safe, 
+        <%= link_to ('<i class="icon-plus-sign"></i> ').html_safe, # + t(:show)).html_safe, 
                       admin_product_path(product), :class => 'btn' %> 
         &nbsp
-        <%= link_to ('<i class="icon-edit icon-white"></i> ' + t(:edit)).html_safe, 
+        <%= link_to ('<i class="icon-edit icon-white"></i> ').html_safe,# + t(:edit)).html_safe, 
                       edit_admin_product_path(product), :class => 'btn btn-info' %> 
         &nbsp
-        <%= link_to ('<i class="icon-remove icon-white"></i> ' + t(:delete)).html_safe, 
+        <%= link_to ('<i class="icon-remove icon-white"></i> ').html_safe, # + t(:delete)).html_safe, 
                       admin_product_path(product), 
                       method: :delete, 
                       data: { confirm: t(:'notice.are_you_sure') }, 

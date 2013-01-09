@@ -2,15 +2,15 @@
   <% products.each do |product| %>
     <div class="span2"> 
       <div class="image">
-        <%= image_tag product.image_url(:thumb), :class => 'img-polaroid'  if product.image? %>
+        <%= image_tag product.image_url(:thumb)  if product.image? %>
       </div>
 
-      <div>
+      <div class="clearfix info">
         <span class="code"> <%= product.code %> </span> - 
-        <%= product.description %>
+        <span class="desc"> <%= product.description %> </desc>
       </div>
       
-      <div>
+      <div class="clearfix">
         <div class="category">
           <%= product.category.name %>
         </div>
@@ -26,5 +26,6 @@
       </div>
     </div>
   <% end %>
+  <div class="clear"></div>
 </div>
 <%= paginate products %>

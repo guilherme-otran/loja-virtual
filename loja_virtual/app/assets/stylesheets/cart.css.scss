@@ -3,26 +3,52 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .container-cart {
-/*	right: -110px; */
-/*	background-color: #E0E0E0;*/
 	float: right;
 	width: auto;
-	max-width: 330px;
+	max-width: 360px;
 	padding-left: 10px;
 	padding-bottom: 10px;
 	border-radius: 4px;
-}
-
-.cart {
-	.table {
-		width: 30%;
+	position: relative;
+	
+	h4 {
+		margin: 0 0 5px 0;
+		position: absolute;
+		left: 25px;
+		background-color: white;
+		padding: 0 2px 0;
 	}
 	
-	a:hover {
-		background: none;
-	}
+	.cart {
+		background-color: #FFF;
+		padding: 10px;
+		border-radius: 5px;
 	
-	.txt-product-quantity {
-		max-width: 25px;
+		.table {
+			width: 100%;
+			
+			td, th {
+				vertical-align: middle;
+			}
+		}
+	
+		.table td {
+			font-size: 12px;
+			padding: 4px;
+		}
+	
+		a:hover {
+			background: none;
+		}
+	
+		.txt-product-quantity {
+			max-width: 20px;
+			max-height: 15px;
+			font-size: 12px;
+		}
+		
+		td {
+			line-height: 100%;
+		}
 	}
 }

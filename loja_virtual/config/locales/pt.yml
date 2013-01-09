@@ -15,14 +15,14 @@ pt:
   
   views:
     pagination:
-      previous: "&lt; Anterior"
-      next:     "Próxima &gt;"
+      previous: "&lt;"
+      next:     "&gt;"
       truncate: "..."
-      last:     "Última &gt;&gt;"
-      first:    "&lt;&lt; Primeira"
+      last:     "&gt;&gt;"
+      first:    "&lt;&lt;"
   
   cart:
-    your:   Seu carrinho
+    cart:   Carrinho
     finish: Finalizar compra
     add:    Comprar
   
