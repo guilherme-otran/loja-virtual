@@ -4,9 +4,9 @@ class WelcomeController < ApplicationController
 
   #GET /
   def index    
-    # Filter and pagination for products
-    # Initializes the var @products and @categories
-    initialize_products_instance_var
+    # Filter and paginations
+    @products = Product.search(params[:search])
+    @products = Kaminari.paginate_array(@products).page(params[:page]).per(4)
     
     # Load cart items
     @items = cart.items

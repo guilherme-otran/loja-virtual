@@ -21,9 +21,10 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    # Initializes the @products and @categories
-    initialize_products_instance_var
-    
+    # # Initializes the @products and @categories
+    # initialize_products_instance_var
+    @products = Product.search(params[:search]).page(params[:page]).per(4)
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: products_filter }

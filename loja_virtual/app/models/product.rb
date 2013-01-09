@@ -20,4 +20,18 @@ class Product < ActiveRecord::Base
       with: %r{\.(jpe?g)\z}i,
       message: 'must be a JPG'
     }
+  
+  #Methods
+  def self.search(search)
+    # if search
+    #   find(:all, :conditions => ['code LIKE ?', "%#{search}%"])
+    # else
+    #   find(:all)
+    # end
+    if search
+      where("description LIKE ?", "%#{search}%")
+    else
+      all
+    end
+  end
 end

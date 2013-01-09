@@ -12,11 +12,7 @@ module ApplicationHelper
     HTML
     html.html_safe
   end
-  
-  def root_path
-    '/index'
-  end
-  
+    
   # TODO return if user is logged in.
   def user_signed_in?
     false
