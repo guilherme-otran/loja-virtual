@@ -21,6 +21,10 @@ pt:
       last:     "Última &gt;&gt;"
       first:    "&lt;&lt; Primeira"
   
+  cart:
+    your: Seu carrinho
+    finish: Finalizar compra
+  
   notice:
     are_you_sure: Você tem certeza?
     error:

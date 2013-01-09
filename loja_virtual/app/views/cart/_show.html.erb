@@ -1,12 +1,15 @@
-<h6>Translate @views/cart/show.html.erb</h6>
-<h4>Your cart (FIXME: Translate!)</h4>
+<h4><%= t(:'cart.your') %></h4>
 <div class="cart">
+  <table class="table table-bordered table-hover">
   <% products.each do |product| %>
-    <div class="cart-product">
+    <tr>
+      <div class="cart-product">
        <%= (products.index(product)+1).to_s + ". " + product.code  + " : " + product.description + " x" + items[products.index(product)].quantity.to_s%>
-    </div>
+      </div>
+    </tr>
   <% end %>
+  </table>
 </div>
-<button>Finalizar Compra</button>
+<button class="btn btn-info"> <%= t(:'cart.finish') %> </button>
 
 
