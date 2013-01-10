@@ -1,37 +1,32 @@
-<div id="products_and_paginator">
-  <div class="all-products">
-    <div class="products">
-      <% @products.each do |product| %>
-        <div class="span2"> 
-          <div class="image">
-            <%= image_tag product.image_url(:thumb)  if product.image? %>
-          </div>
+<div class="all-products products">
+    <% @products.each do |product| %>
+      <div class="span2"> 
+        <div class="image">
+          <%= image_tag product.image_url(:thumb)  if product.image? %>
+        </div>
 
-          <div class="clearfix info">
-            <span class="code"> <%= product.code %> </span> - 
-            <span class="desc"> <%= product.description %> </span>
+        <div class="clearfix info">
+          <span class="code"> <%= product.code %> </span> - 
+          <span class="desc"> <%= product.description %> </span>
+        </div>
+        
+        <div class="clearfix">
+          <div class="category">
+            <%= product.category.name %>
           </div>
-          
-          <div class="clearfix">
-            <div class="category">
-              <%= product.category.name %>
-            </div>
-            <div class="price">
-              <%= number_to_currency(product.price) %>
-            </div>
-          </div>
-          <div class="btn-cart">
-            <%= link_to ('<i class="icon-shopping-cart"></i> ' + t(:"cart.add")).html_safe, 
-              add_to_cart_product_path(product), :class => 'btn-add-to-cart btn btn-info', :data => {id: product.id} %>
+          <div class="price">
+            <%= number_to_currency(product.price) %>
           </div>
         </div>
-      <% end %>
-      <div class="clear"></div>
-    </div>
-  </div>
-  <div id="paginator">
-    <%= paginate @products %>
-  </div>
-  
+        <div class="btn-cart">
+          <%= link_to ('<i class="icon-shopping-cart"></i> ' + t(:"cart.add")).html_safe, 
+            add_to_cart_product_path(product), :class => 'btn-add-to-cart btn btn-info', :data => {id: product.id} %>
+        </div>
+      </div>
+    <% end %>
+  <div class="clear"></div>
 </div>
 
+<div id="paginator">
+  <%= paginate @products %>
+</div>

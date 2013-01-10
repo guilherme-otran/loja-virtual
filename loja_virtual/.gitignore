@@ -13,3 +13,9 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Ignore file uploads
+/public/uploaders
+
+# Ignore ds_store
+*.DS_Store

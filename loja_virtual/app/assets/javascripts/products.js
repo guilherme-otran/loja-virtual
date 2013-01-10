@@ -1,5 +1,4 @@
 jQuery(function($){
-	//var productsDiv = $("div.all-products");
   
 	var productsDiv = $("div#products_and_paginator");
 	productsDiv.delegate("a.btn-add-to-cart","click", function(event){
@@ -32,17 +31,15 @@ jQuery(function($){
     })
   });
   
-	$("select#categories_select").on("click", ".category-option", function(event){
-		//event.preventDefault();
-		//$("#products_and_paginator").load($(this).data("ajax-href"));
-    $.getScript($(this).data("ajax-href"));
+	$("select#categories_select").on("change", function(event){
+    var selected = $(this).find(":selected");
+    $.getScript(selected.data("ajax-href"));
     // Refresh search form link
-    $("#search_form").get(0).setAttribute('action', $(this).data("ajax-href"));
+    $("#search_form").get(0).setAttribute('action', selected.data("ajax-href"));
 	});
 	
 	$("div#products_and_paginator").on("click", "#paginator a", function(event){
 		event.preventDefault();
-		//$("#products_and_paginator").load($(this).attr('href'));
 		$.getScript(this.href);
 	});
 });

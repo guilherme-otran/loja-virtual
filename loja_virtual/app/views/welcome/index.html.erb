@@ -12,12 +12,10 @@
   </span>
 <% end %>
 
-<!-- <div class="all-products">	moved to products/_index -->
-<%= render partial: "products/index" %>
-<!-- </div> -->
-
-<!-- <%= paginate @products %>  moved to products/_index -->
+<div id="products_and_paginator">
+  <%= render partial: "products/index" %>
 </div>
+
 <div class="shop-cart clearfix">
   <%= render :partial => "cart/show", locals: { items: @items, products: @cart_products} %>
 </div>
