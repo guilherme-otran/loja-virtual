@@ -20,9 +20,22 @@ class Product < ActiveRecord::Base
       with: %r{\.(jpe?g)\z}i,
       message: 'must be a JPG'
     }
+    
+  # Scopes
+  scope :by_category_id, (lambda do |category_id| 
+    where category_id: category_id if category_id
+  end)
+  
+  scope :by_description, (lambda do |description|
+    if !description
+      logger.debug("description nil")
+    end
+    where "description LIKE ?", "%#{description}%" if description
+  end)
   
   #Methods
   def self.search(conditions = {})
-    where("description LIKE ?", "%#{conditions["description"]}%") if conditions["description"]
+    Product.by_category_id(conditions[:category_id])
+      .by_description(conditions[:search]?conditions[:search][:description]:nil)
   end
 end

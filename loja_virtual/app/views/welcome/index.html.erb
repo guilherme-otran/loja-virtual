@@ -1,22 +1,22 @@
-<%= form_for :search, :url => products_path, :method => "GET", :html => { :id => "search_form" } do |f| %>
-  <select name="filter_by">
-    <option id="default" selected="selected"> <%= t(:'search.default') %> </option>
-    <option id="0"> <%= t(:'activerecord.models.category') %> </option>
-    <option id="1"> <%= Product.human_attribute_name(:description) %> </option>
-  </select>
+<select id="categories_select" class="categories-select">
+  <option class="category-option" selected="selected" data-ajax-href="<%= products_path %>"><%= t(:all_categories) %></option>
+  <% @categories.each do |category| %>
+    <option class="category-option" data-ajax-href="<%= products_category_path(category) %>"><%= category.name %></option>
+  <% end %> 
+</select> 
 
+<%= form_for :search, url: search_form_path, method: "GET", html: { id: "search_form", class: "search" } do |f| %>
   <span class="input-append">
     <%= f.text_field :description, :id => "search_field" %>
     <%= f.submit t(:'search.button_text'), :name => nil, :id => "btn_search", :class => 'btn btn-info' %>
-    <%= link_to 'Todos', root_path, :class => 'btn btn-info' %>
   </span>
 <% end %>
 
-<div class="all-products">
-  <%= render partial: "products/index", locals: { products: @products }%>
-  <div class="clear"></div>
+<!-- <div class="all-products">	moved to products/_index -->
+<%= render partial: "products/index" %>
+<!-- </div> -->
 
-  <%= paginate @products %>
+<!-- <%= paginate @products %>  moved to products/_index -->
 </div>
 <div class="shop-cart clearfix">
   <%= render :partial => "cart/show", locals: { items: @items, products: @cart_products} %>

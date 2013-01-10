@@ -10,12 +10,14 @@ LojaVirtual::Application.routes.draw do
   
   # Client pages
   root :to => 'welcome#index'
+  match '/category/:category_id' => 'welcome#index', as: :category
 
-  resources :products, only: [:show, :index] do
+  resources :products, only: [:index, :show] do
     post "add_to_cart", on: :member
     delete "remove_from_cart", on: :member
   end
-
+  match 'products/category/:category_id' => 'products#index', as: :products_category
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

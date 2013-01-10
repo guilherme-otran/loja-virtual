@@ -5,7 +5,7 @@ development:
   database: loja_virtual
   pool: 5
   username: root
-  password:
+  password: 
   host: localhost
   
 test:

@@ -12,7 +12,15 @@ module ApplicationHelper
     HTML
     html.html_safe
   end
-    
+  
+  def search_form_path
+    if params[:category_id]
+      products_category_path(params[:category_id])
+    else
+      products_path
+    end
+  end
+  
   # TODO return if user is logged in.
   def user_signed_in?
     false

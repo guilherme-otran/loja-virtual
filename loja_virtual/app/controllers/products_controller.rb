@@ -1,36 +1,24 @@
 class ProductsController < ApplicationController
-  # Filters  
-  # before_filter :check_session_for_user_cart
+  include ProductFilterPaginator
   
-  module ProductsPagingAndFilter
-    def initialize_products_instance_var
-      # Load categories for filter products
-      @categories = Category.all
-      
-      # If has a category, filter and put to @products
-      if params[:category].nil?
-        @products = Product.page(params[:page]).per(8)
-      else
-        @products = Product.page(params[:page]).per(8).where(category_id: params[:category])
-      end
-    end
-  end  
-  include ProductsPagingAndFilter  
+  include CartManager
+  helper_method :cart
   
-  # GET /products
-  # GET /products.json
+  # GET /products/category/1
+  # GET /products/
   def index
-    # # Initializes the @products and @categories
-    # initialize_products_instance_var
-    @products = Product.search(params[:search]).page(params[:page]).per(8)
-
+    @categories = Category.all
+    
+    # Initialize @products
+    filter_products
+    paginate_products
+    
     respond_to do |format|
-      format.js
-      format.html # index.html.erb
-      format.json { render json: products_filter }
+      format.html { render "welcome/index" }
+      format.js   { render partial: "index" }
     end
   end
-
+  
   # GET /products/1
   # GET /products/1.json
   def show

@@ -1,5 +1,8 @@
 class CartController < ApplicationController
-  def show  
+  include CartManager
+  helper_method :cart
+  
+  def show
     @items = cart.items
     @products = @items.collect { |item| Product.find(item.product_id) }
     
