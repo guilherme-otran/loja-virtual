@@ -27,9 +27,6 @@ class Product < ActiveRecord::Base
   end)
   
   scope :by_description, (lambda do |description|
-    if !description
-      logger.debug("description nil")
-    end
     where "description LIKE ?", "%#{description}%" if description
   end)
   
