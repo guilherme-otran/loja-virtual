@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   
+  # Modules
   module ProductFilterPaginator
     def filter_products
       @products = if @products

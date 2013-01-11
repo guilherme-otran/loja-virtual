@@ -38,7 +38,7 @@ class ProductsController < ApplicationController
   # POST /products/1/add_to_cart.js
   # POST /products/1/add_to_cart.json
   def add_to_cart
-    @succefully_added = cart.add_item(params[:id].to_i)
+    @succefully_added = cart.add_item params[:id].to_i
     
     respond_to do |format|
       format.html { redirect_to :root }
@@ -51,7 +51,7 @@ class ProductsController < ApplicationController
   # DELETE /products/1/add_to_cart.js
   # DELETE /products/1/add_to_cart.json
   def remove_from_cart
-    cart.remove_item(params[:id].to_i)
+    cart.remove_item params[:id].to_i
     
     respond_to do |format|
       format.html { redirect_to :root }
@@ -61,7 +61,7 @@ class ProductsController < ApplicationController
   end  
   
   def change_quantity
-    cart.change_quantity((params[:id].to_i),params[:quantity].to_i)
+    cart.change_quantity params[:id].to_i , params[:quantity].to_i
     
     respond_to do |format|
       format.js

@@ -31,6 +31,7 @@ pt:
     finish: Finalizar compra
     add:    Comprar
     count:  Qtde.
+    total:  "Total: "
   
   notice:
     are_you_sure: Você tem certeza?

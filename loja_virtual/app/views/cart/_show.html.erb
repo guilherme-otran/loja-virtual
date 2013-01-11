@@ -32,6 +32,10 @@
                 data-path="<%=change_quantity_product_path(product)%>"
               </input>
               </div>
+
+            </td>
+            <td>
+              <%= number_to_currency product_price(product) %>
             </td>
             <td>
               <%= link_to ('<i class="icon-remove"></i> ').html_safe(),
@@ -42,6 +46,9 @@
             </td>
           </tr>
         <% end %>
+        <tr>
+          <td colspan=6> <%= t(:"cart.total") + number_to_currency(cart.total_value) %> </td>
+        </tr>
       </tbody>
     </table>
   </div>

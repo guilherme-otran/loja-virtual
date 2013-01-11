@@ -8,12 +8,13 @@ class Cart
   
   def add_item(product_id)
     current_item = @items.find { |item| item.product_id == product_id }
+
     if current_item
       return false
     else
       @items << Item.new(product_id)
+      return true
     end
-    true
   end
   
   def remove_item(product_id)
@@ -38,5 +39,17 @@ class Cart
   
   def product_index(product)
     @items.index { |item| item.product_id == product.id }
+  end
+
+  def product_price(product)
+    product.price * (@items.find { |item| item.product_priceid == product.id}).quantity
+  end
+  def total_value
+    total_value = 0
+    @items.each do |item|
+      current_product = Product.find(item.product_id)
+      total_value += current_product.price * item.quantity
+    end
+    total_value
   end
 end

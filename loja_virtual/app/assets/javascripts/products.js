@@ -1,6 +1,10 @@
 jQuery(function($){
   
+  var current_product_quantity = 0;
 	var productsDiv = $("div#products_and_paginator");
+  var search_field = $("input#search_field");
+	var cartDiv = $("div.shop-cart");
+
 	productsDiv.delegate("a.btn-add-to-cart","click", function(event){
 	  event.preventDefault();
 		$.ajax({
@@ -8,27 +12,11 @@ jQuery(function($){
 			url: $(this).attr("href"),
 			data: { id: $(this).data.id	},
 			type: "POST"
-		})
-	})
-	
-	var cartDiv = $("div.shop-cart");
-  cartDiv.delegate("a.btn-remove-from-cart","click", function(event){
-    event.preventDefault();
-    $.ajax({
-      dataType: "script",
-      url: $(this).attr("href"),
-      data: { id: $(this).data.id },
-      type: "DELETE"
-    })
-  })    
-
-  $("#search_form").on("submit", function(event){
-    event.preventDefault();
-    $.ajax({
-      dataType: "script",
-      url: this.action,
-      data: $(this).serialize()
-    })
+		});
+	}); 
+  
+  cartDiv.delegate("input.txt-product-quantity", "focusin", function(event){
+    current_product_quantity = $(this).val();
   });
   
   cartDiv.delegate("input.txt-product-quantity", "change", function(event){
@@ -46,13 +34,31 @@ jQuery(function($){
         data: { quantity: $(this).attr("value") }
       });
     });
-      
-	var search_field = $("input#search_field");
+
+  cartDiv.delegate("a.btn-remove-from-cart","click", function(event){
+    event.preventDefault();
+    $.ajax({
+      dataType: "script",
+      url: $(this).attr("href"),
+      type: "DELETE"
+    })
+  })  
+
   search_field.on("keyup", function() {
-  	if (search_field.val() === "") {
-  		$("#search_form").submit();
-  	}
+    if (search_field.val() === "") {
+      $("#search_form").submit();
+    }
   });
+
+  $("#search_form").on("submit", function(event){
+    event.preventDefault();
+    $.ajax({
+      dataType: "script",
+      url: this.action,
+      data: $(this).serialize()
+    })
+  });   
+
   
 	$("select#categories_select").on("change", function(event){
     var selected = $(this).find(":selected");
