@@ -42,7 +42,7 @@ class Cart
   end
 
   def product_price(product)
-    product.price * (@items.find { |item| item.product_priceid == product.id}).quantity
+    product.price * (@items.find { |item| item.product_id == product.id}).quantity
   end
   def total_value
     total_value = 0
