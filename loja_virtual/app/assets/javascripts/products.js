@@ -23,7 +23,7 @@ jQuery(function($){
     event.preventDefault();
     if (isNaN($(this).val()))
     {
-      alert("Por favor digite uma quantidade válida");
+      alert($(this).data("invalid-value"));
       $(this).val(current_product_quantity);
     }
     else

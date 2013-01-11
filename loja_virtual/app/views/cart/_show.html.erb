@@ -5,31 +5,34 @@
       <thead>
         <tr>
           <th>#</th>
-          <th><%= Product.human_attribute_name(:code) %></th>
+          <!-- <th><%= Product.human_attribute_name(:code) %></th> -->
           <th><%= Product.human_attribute_name(:description) %></th>
           <th><%= t(:'cart.count') %></th>
+          <th><%= Product.human_attribute_name(:price)%></th>
           <th></th>
         </tr>
       </thead>
+
       <tbody>
         <% products.each do |product| %>
           <tr>
             <th>
               <%= product_number(product) %>
             </th>
-            <td>
+            <!-- <td>
               <%= product.code  %>
-            </td>
+            </td> -->
             <td>
               <%= product.description %>
             </td>
             <td>
               <div align="center">
-              <input type="text" 
-                value="<%= product_quantity(product) %>" 
-                class="txt-product-quantity" 
-                data-id="<%= product_number(product)%>"      
-                data-path="<%=change_quantity_product_path(product)%>"
+              <input  type="text"
+                      value="<%= product_quantity(product) %>" 
+                      class="txt-product-quantity" 
+                      data-id="<%= product_number(product)%>"      
+                      data-path="<%=change_quantity_product_path(product)%>"
+                      data-invalid-value="<%= t(:'cart.quantity.invalid') %>">
               </input>
               </div>
 

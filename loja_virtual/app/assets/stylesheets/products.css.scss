@@ -21,6 +21,23 @@
 			width: 86%;
 		}
 	}	
+
+	.desc {
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+		display: block;
+
+		a {
+			text-decoration: underline;
+			color: #009ACD;
+		}
+
+		a:hover {
+			background-color: #FFF;
+			color: #00688B;
+		}
+	}
 	
 	.image {
 		height: 150px;
@@ -31,9 +48,10 @@
 	
 	.info { 
 		margin: 0 5px 0;
-		overflow: hidden;
+		/*overflow: hidden;
 		text-overflow: ellipsis;
-		white-space: nowrap;
+		white-space: nowrap;*/
+		width: 95%;
 	}
 	
 	.price {

@@ -32,6 +32,10 @@ pt:
     add:    Comprar
     count:  Qtde.
     total:  "Total: "
+    already_on_cart: Já existe este produto no carrinho.
+    quantity:
+      changed: Quantidade alterada com sucesso!
+      invalid: Por favor digite uma quantidade válida.
   
   notice:
     are_you_sure: Você tem certeza?
