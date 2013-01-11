@@ -9,19 +9,19 @@ class Cart
   def add_item(product_id)
     current_item = @items.find { |item| item.product_id == product_id }
     
-    if current_item
-      current_item.increment_quantity    
-    else
-      @items << Item.new(product_id)
-    end
+    @items << Item.new(product_id) unless current_item
   end
   
   def remove_item(product_id)
     current_item = @items.index { |item| item.product_id == product_id }
     
-    if current_item
-      @items.delete_at(current_item)
-    end
+    @items.delete_at(current_item) if current_item
+  end
+  
+  def change_quantity(product_id,new_quantity)
+    item_id = @items.index { |item| item.product_id == product_id }
+    
+    @items[item_id].quantity = new_quantity if item_id
   end
   
   def items_count

@@ -55,4 +55,13 @@ class ProductsController < ApplicationController
       format.json { render json: cart }
     end
   end  
+  
+  def change_quantity
+    cart.change_quantity((params[:id].to_i),params[:quantity].to_i)
+    
+    respond_to do |format|
+      format.js
+      format.html { redirect_to :show }
+    end
+  end
 end
