@@ -16,6 +16,7 @@ pt:
   search:
     default:      Pesquisar por...
     button_text:  Pesquisar
+    all:          Todos
   
   views:
     pagination:
