@@ -45,6 +45,7 @@ jQuery(function($){
         type: "PUT",
         data: { quantity: $(this).attr("value") }
       });
+    });
       
 	var search_field = $("input#search_field");
   search_field.on("keyup", function() {
