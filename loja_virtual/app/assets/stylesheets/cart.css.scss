@@ -15,11 +15,9 @@
 	}
 	
 	h4 {
-		background-color: white;
 		left: 25px;
-		margin: 0 0 5px 0;
+		margin: 0 0 -2px 0;
 		padding: 0 2px 0;
-		position: absolute;
 	}
 	
 	.cart {
@@ -29,6 +27,15 @@
 	
 		a:hover {
 			background: none;
+		}
+
+		.cart-total {
+			text-align: right;
+		}
+
+		.label-total {
+			font-weight: bold;
+			display: inline;
 		}
 		
 		.table {
@@ -40,10 +47,6 @@
 				padding: 4px;
 				vertical-align: middle;
 			}
-
-			.txt-product-quantity {
-				text-align: right;
-			}
 		}
 		
 		.txt-product-quantity {
@@ -53,5 +56,6 @@
 			max-width: 20px;
 			text-align: center;
 		}
+
 	}
 }

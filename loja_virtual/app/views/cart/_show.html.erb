@@ -50,7 +50,7 @@
           </tr>
         <% end %>
         <tr>
-          <td colspan=6> <%= t(:"cart.total") + number_to_currency(cart.total_value) %> </td>
+          <td colspan=5 class="cart-total"> <label class="label-total"> <%= t(:"cart.total") %> </label> <%= number_to_currency(cart.total_value) %> </td>
         </tr>
       </tbody>
     </table>
