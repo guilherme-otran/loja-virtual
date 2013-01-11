@@ -34,7 +34,7 @@ class ProductsController < ApplicationController
   # POST /products/1/add_to_cart.js
   # POST /products/1/add_to_cart.json
   def add_to_cart
-    cart.add_item(params[:id].to_i)
+    @succefully_added = cart.add_item(params[:id].to_i)
     
     respond_to do |format|
       format.html { redirect_to :root }

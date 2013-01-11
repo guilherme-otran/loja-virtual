@@ -45,7 +45,7 @@ jQuery(function($){
     else
       $.ajax({
         dataType: "script",
-        url: $(this).data().path +".js",
+        url: $(this).data("path") + ".js",
         type: "PUT",
         data: { quantity: $(this).attr("value") }
       });

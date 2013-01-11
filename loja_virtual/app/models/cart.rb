@@ -8,8 +8,12 @@ class Cart
   
   def add_item(product_id)
     current_item = @items.find { |item| item.product_id == product_id }
-    
-    @items << Item.new(product_id) unless current_item
+    if current_item
+      return false
+    else
+      @items << Item.new(product_id)
+    end
+    true
   end
   
   def remove_item(product_id)

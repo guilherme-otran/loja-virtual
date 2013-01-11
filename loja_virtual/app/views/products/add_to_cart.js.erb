@@ -1,1 +1,5 @@
-<%= render partial: "change_cart"%>
+<% if @succefully_added %>
+  <%= render partial: "change_cart"%>
+<% else %>
+  alert("Já existe este produto no carrinho");
+<% end %>
