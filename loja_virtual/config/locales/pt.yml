@@ -49,6 +49,7 @@ pt:
     manage:       Administrar Produtos
     created:      Produto cadastrado com sucesso.
     edited:       Produto editado com sucesso.
+    not_found:    Nenhum produto foi encontrado.
     category:
       select: Selecione
   

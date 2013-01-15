@@ -44,6 +44,7 @@ jQuery(function($){
     })
   })  
 
+//////////////////// SEARCH /////////////////////////
   search_field.on("keyup", function() {
     if (search_field.val() === "") {
       $("#search_form").submit();
@@ -66,7 +67,8 @@ jQuery(function($){
     // Refresh search form link
     $("#search_form").get(0).setAttribute('action', selected.data("ajax-href"));
 	});
-	
+
+////////////////// PAGINATION ///////////////////////
 	$("div#products_and_paginator").on("click", "#paginator a", function(event){
 		event.preventDefault();
 		$.getScript(this.href);

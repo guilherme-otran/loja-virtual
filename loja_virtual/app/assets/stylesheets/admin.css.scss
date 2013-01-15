@@ -1,0 +1,14 @@
+.header {
+	position: relative;
+
+	h1 {
+		float: left;
+	}
+
+	.filter-form {
+		float: right;
+		position: absolute;
+		right: 0;
+		bottom: 10px;
+	}
+}

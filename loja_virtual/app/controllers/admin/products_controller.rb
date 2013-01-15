@@ -1,12 +1,19 @@
 class Admin::ProductsController < ApplicationController
+  include ProductFilterPaginator
+
   # GET admin/products
   # GET admin/products.json
   def index
-    @products = Product.all
-
+    filter_products
+    paginate_products
+    
     respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @products }
+      if !@products.empty?
+        format.html { render "index" }
+        format.js   { render partial: "index" }
+      else
+        format.js {render partial: "products_not_found"}
+      end
     end
   end
 
