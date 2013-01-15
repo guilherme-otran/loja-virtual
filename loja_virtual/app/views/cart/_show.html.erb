@@ -12,6 +12,10 @@
         </tr>
       </thead>
 
+      <tfoot>
+        <td colspan=5 class="cart-total"> <label class="label-total"> <%= t(:"cart.total") %> </label> <%= number_to_currency(cart.total_value) %> </td>
+      </tfoot>
+
       <tbody>
         <% products.each do |product| %>
           <tr>
@@ -45,9 +49,6 @@
             </td>
           </tr>
         <% end %>
-        <tr>
-          <td colspan=5 class="cart-total"> <label class="label-total"> <%= t(:"cart.total") %> </label> <%= number_to_currency(cart.total_value) %> </td>
-        </tr>
       </tbody>
     </table>
   </div>
