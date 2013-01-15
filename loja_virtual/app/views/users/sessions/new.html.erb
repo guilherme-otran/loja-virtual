@@ -1,0 +1,17 @@
+<h6>Translate me at: app/views/users/sessions/new.html.erb</h6>
+<h2>TRANSLATE ME: Sign In</h2>
+
+<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+
+  <div class="form-inputs">
+    <%= f.input :email,                 :required => true, :autofocus => true, :label => t('form.caption.email') %>
+    <%= f.input :password,              :required => true,                     :label => t('form.caption.password') %>
+    <%= f.input :remember_me, :as => :boolean if devise_mapping.rememberable? %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "TRANSLATE ME: Sign in" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>

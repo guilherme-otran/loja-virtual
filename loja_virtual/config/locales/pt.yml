@@ -6,6 +6,11 @@ pt:
   cancel: Cancelar
   title:  Loja Virtual
   all_categories: Todas as categorias
+  form:
+    caption:
+      email: E-mail
+      password: Senha
+      password_confirmation: "Confirme sua senha"
   menu:
     sign_up:      Registrar-se
     edit_account: Editar conta
@@ -52,6 +57,8 @@ pt:
     category:
       select: Selecione
   
+
+
   date:
     abbr_day_names:
     - Dom
