@@ -5,7 +5,6 @@
       <thead>
         <tr>
           <th>#</th>
-          <!-- <th><%= Product.human_attribute_name(:code) %></th> -->
           <th><%= Product.human_attribute_name(:description) %></th>
           <th><%= t(:'cart.count') %></th>
           <th><%= Product.human_attribute_name(:price)%></th>
@@ -13,29 +12,33 @@
         </tr>
       </thead>
 
+      <tfoot>
+        <tr>
+          <td colspan=5 class="cart-total"> 
+            <label class="label-total"> <%= t(:"cart.total") %> </label> <%= number_to_currency(cart.total_value) %> 
+          </td>
+        </tr>
+      </tfoot>
+
       <tbody>
         <% products.each do |product| %>
           <tr>
             <th>
               <%= product_number(product) %>
             </th>
-            <!-- <td>
-              <%= product.code  %>
-            </td> -->
             <td>
               <%= product.description %>
             </td>
             <td>
               <div align="center">
-              <input  type="text"
-                      value="<%= product_quantity(product) %>" 
-                      class="txt-product-quantity" 
-                      data-id="<%= product_number(product)%>"      
-                      data-path="<%=change_quantity_product_path(product)%>"
-                      data-invalid-value="<%= t(:'cart.quantity.invalid') %>">
-              </input>
+                <input  type="text"
+                        value="<%= product_quantity(product) %>" 
+                        class="txt-product-quantity" 
+                        data-id="<%= product_number(product)%>"      
+                        data-path="<%=change_quantity_product_path(product)%>"
+                        data-invalid-value="<%= t(:'cart.quantity.invalid') %>">
+                </input>
               </div>
-
             </td>
             <td>
               <%= number_to_currency product_price(product) %>
@@ -49,9 +52,6 @@
             </td>
           </tr>
         <% end %>
-        <tr>
-          <td colspan=5 class="cart-total"> <label class="label-total"> <%= t(:"cart.total") %> </label> <%= number_to_currency(cart.total_value) %> </td>
-        </tr>
       </tbody>
     </table>
   </div>

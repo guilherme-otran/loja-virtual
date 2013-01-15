@@ -13,8 +13,8 @@
 	}
 	
 	.btn-cart {
-		position: absolute;
 		bottom: 0px;
+		position: absolute;
 		width: 100%;
 		
 		.btn {
@@ -23,11 +23,11 @@
 	}	
 
 	.desc {
+		display: block;
+		overflow: hidden;
 		text-overflow: ellipsis;
 		white-space: nowrap;
-		overflow: hidden;
-		display: block;
-
+		
 		a {
 			text-decoration: underline;
 			color: #009ACD;
@@ -48,9 +48,6 @@
 	
 	.info { 
 		margin: 0 5px 0;
-		/*overflow: hidden;
-		text-overflow: ellipsis;
-		white-space: nowrap;*/
 		width: 95%;
 	}
 	
