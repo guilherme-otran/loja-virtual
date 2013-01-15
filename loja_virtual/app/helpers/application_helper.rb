@@ -20,30 +20,4 @@ module ApplicationHelper
       products_path
     end
   end
-  
-  # TODO return if user is logged in.
-  def user_signed_in?
-    false
-  end
-  
-  # TODO return logoff action.
-  def destroy_user_session_path
-    ''
-  end
-  
-  # Create user
-  def new_user_session_path
-    ''
-  end
-  
-  # User register edit.
-  def edit_user_registration_path
-    ''
-  end
-  
-  # New user.
-  def new_user_registration_path
-    ''
-  end
-  
 end
