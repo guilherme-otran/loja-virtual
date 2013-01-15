@@ -29,33 +29,3 @@
 // 		})
 // 	})
 // })
-jQuery(function($){
-  var search_field = $("input#search_field");
-  
-  search_field.on("keyup", function() {
-    if (search_field.val() === "") {
-      $("#search_form").submit();
-    }
-  });
-
-  $("#search_form").on("submit", function(event){
-    event.preventDefault();
-    $.ajax({
-      dataType: "script",
-      url: this.action,
-      data: $(this).serialize()
-    })
-  });   
-  
-  $("select#categories_select").on("change", function(event){
-    var selected = $(this).find(":selected");
-    $.getScript(selected.data("ajax-href"));
-    // Refresh search form link
-    $("#search_form").get(0).setAttribute('action', selected.data("ajax-href"));
-  });
-  
-  $("div#products_and_paginator").on("click", "#paginator a", function(event){
-    event.preventDefault();
-    $.getScript(this.href);
-  });
-});
