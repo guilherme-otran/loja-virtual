@@ -3,7 +3,7 @@ class CartController < ApplicationController
   helper_method :cart
   
   def show
-    @items = cart.items
+    @items    = cart.items
     @products = @items.collect(&:product)
     
     # GET /cart/show.html

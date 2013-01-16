@@ -14,7 +14,6 @@ class WelcomeController < ApplicationController
     
     load_cart_items
     
-
     respond_to do |format|
       format.html { render(partial: "products/index") if request.xhr? }
       format.js   { render partial: "products/index"                  }

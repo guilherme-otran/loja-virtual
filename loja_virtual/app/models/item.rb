@@ -7,6 +7,6 @@ class Item
   end
 
   def product
-    @product ||= Product.find(product_id) if product_id
+    @product ||= Product.find(product_id)
   end
 end

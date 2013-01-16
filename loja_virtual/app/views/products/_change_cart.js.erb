@@ -1,5 +1,5 @@
 $.ajax({
-  url: "/cart/show",
+  url: "<%= cart_show_path %>",
   success: function(page){	  
     $(".shop-cart").html(page);
   }

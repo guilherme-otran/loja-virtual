@@ -1,7 +1,6 @@
 module CartHelper
-
   def product_number(product)
-    (cart.product_index(product)+1).to_s
+    (cart.product_index(product) + 1).to_s
   end
   
   def product_quantity(product)
