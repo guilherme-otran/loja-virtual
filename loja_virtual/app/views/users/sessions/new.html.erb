@@ -1,5 +1,5 @@
-<h6>Translate me at: app/views/users/sessions/new.html.erb</h6>
-<h2>TRANSLATE ME: Sign In</h2>
+
+<h2><%= t('simple_form.titles.sign_in') %></h2>
 
 <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
 
@@ -10,7 +10,7 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "TRANSLATE ME: Sign in" %>
+    <%= f.button :submit %>
   </div>
 <% end %>
 
