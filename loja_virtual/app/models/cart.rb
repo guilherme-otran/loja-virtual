@@ -39,7 +39,7 @@ class Cart
 	end
 
 	def total_value
-		@items.inject(0) { |memo, item| item.product.price * item.quantity }
+		@items.inject(0) { |memo, item| memo += item.product.price * item.quantity }
 	end
 
 	def product?(product_id)

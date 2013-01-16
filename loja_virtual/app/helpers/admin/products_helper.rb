@@ -6,7 +6,10 @@ module Admin::ProductsHelper
   end
 
   def format_product_price
-    return "" if @product.price?
-    number_to_currency(@product.price).gsub("R$ ", "")
+    if @product.price?
+      number_to_currency(@product.price).gsub("R$ ", "")
+    else
+      return "" 
+    end
   end
 end
