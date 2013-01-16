@@ -6,9 +6,7 @@ class Cart
 	end
 	
 	def add_item(product_id)
-		current_item = @items.find { |item| item.product_id == product_id }
-
-		if current_item
+		if product?(product_id) # The products is already in the cart.
 			false
 		else
 			@items << Item.new(product_id)
@@ -16,40 +14,35 @@ class Cart
 		end
 	end
 	
-	def remove_item(product_id)
-		current_item = @items.index { |item| item.product_id == product_id }
-		
-		@items.delete_at(current_item) if current_item
+	def remove_item(product_id)		
+		@items.delete_at(product_index(product_id)) if product?(product_id)
 	end
 	
 	def change_quantity(product_id, new_quantity)
-		item_id = @items.index { |item| item.product_id == product_id }
-		
-		@items[item_id].quantity = new_quantity if item_id
+		@items[product_index(product_id)].quantity = new_quantity if product?(product_id)
 	end
 	
 	def items_count
 		@items.map(&:quantity).inject(:+) || 0
 	end
 	
-	def product_quantity(product)
-		@items[product_index(product)].quantity
+	def product_quantity(product_id)
+		@items[product_index(product_id)].quantity
 	end
 	
-	def product_index(product)
-		@items.index { |item| item.product_id == product.id }
+	def product_index(product_id)
+		@items.index { |item| item.product_id == product_id }
 	end
 
 	def product_price(product)
-		product.price * (@items.find { |item| item.product_id == product.id }).quantity
+		product.price * @items[product_index(product.id)].quantity
 	end
 
 	def total_value
-		total_value = 0
-		@items.each do |item|
-			current_product = Product.find(item.product_id)
-			total_value += current_product.price * item.quantity
-		end
-		total_value
+		@items.inject(0) { |memo, item| item.product.price * item.quantity }
+	end
+
+	def product?(product_id)
+		!!product_index(product_id)
 	end
 end
