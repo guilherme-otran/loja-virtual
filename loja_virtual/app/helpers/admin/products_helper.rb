@@ -6,6 +6,6 @@ module Admin::ProductsHelper
   end
 
   def format_product_price
-    @product.price? ? number_to_currency(@product.price).gsub("R$ ", "") : "" 
+    @product.price? ? number_to_currency(@product.price).gsub(t('number.currency.format.unit'), "") : ""
   end
 end
