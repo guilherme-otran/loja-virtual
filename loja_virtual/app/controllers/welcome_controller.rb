@@ -1,3 +1,6 @@
+require 'product_filter_paginator'
+require 'cart_manager'
+
 class WelcomeController < ApplicationController  
   include ProductFilterPaginator
   
