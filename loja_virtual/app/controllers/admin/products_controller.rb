@@ -1,3 +1,5 @@
+require 'product_filter_paginator'
+
 class Admin::ProductsController < ApplicationController
   include ProductFilterPaginator
 
