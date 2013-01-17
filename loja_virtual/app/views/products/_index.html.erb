@@ -14,14 +14,18 @@
         <div class="category">
           <%= product.category.name %>
         </div>
+
         <div class="price">
           <%= number_to_currency(product.price) %>
         </div>
       </div>
+
       <div class="btn-cart">
         <%= link_to ('<i class="icon-shopping-cart"></i> ' + t(:"cart.add")).html_safe, 
-          add_to_cart_product_path(product), :class => 'btn-add-to-cart btn btn-info', :data => {id: product.id} %>
-       </div>
+          add_to_cart_product_path(product), 
+            :class  => 'btn-add-to-cart btn btn-info', 
+            :data   => {id: product.id} %>
+      </div>
     </div>
   <% end %>
 <!-- END OF PRODUCTS -->

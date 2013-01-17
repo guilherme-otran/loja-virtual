@@ -9,5 +9,3 @@ jQuery ($) ->
 				id: $(this).data.id
 
 			type: "POST"
-
-

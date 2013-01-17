@@ -1,21 +1,22 @@
 <div class="container-cart">
-  <h4><%= t(:'cart.cart') %></h4>
+  <h4> <%= t(:'cart.cart') %> </h4>
   <div class="cart">
     <table class="table table-bordered table-hover">
       <thead>
         <tr>
-          <th>#</th>
-          <th><%= Product.human_attribute_name(:description) %></th>
-          <th><%= t(:'cart.count') %></th>
-          <th><%= Product.human_attribute_name(:price)%></th>
-          <th></th>
+          <th> # </th>
+          <th> <%= Product.human_attribute_name(:description) %> </th>
+          <th> <%= t(:'cart.count') %> </th>
+          <th> <%= Product.human_attribute_name(:price) %> </th>
+          <th> </th>
         </tr>
       </thead>
 
       <tfoot>
         <tr>
           <td colspan=5 class="cart-total"> 
-            <label class="label-total"> <%= t(:"cart.total") %> </label> <%= number_to_currency(cart.total_value) %> 
+            <label class="label-total"> <%= t(:"cart.total") %> </label> 
+            <%= number_to_currency(cart.total_value) %> 
           </td>
         </tr>
       </tfoot>
@@ -23,12 +24,8 @@
       <tbody>
         <% products.each do |product| %>
           <tr>
-            <th>
-              <%= product_number(product) %>
-            </th>
-            <td>
-              <%= product.description %>
-            </td>
+            <th> <%= product_number(product) %> </th>
+            <td> <%= product.description %> </td>
             <td>
               <div align="center">
                 <input  type="text"
@@ -40,15 +37,12 @@
                 </input>
               </div>
             </td>
-            <td>
-              <%= number_to_currency product_price(product) %>
-            </td>
+            <td> <%= number_to_currency product_price(product) %> </td>
             <td>
               <%= link_to ('<i class="icon-remove"></i> ').html_safe(),
                 remove_from_cart_product_path(product),
-                :class => 'btn-remove-from-cart',
-                :data => {id: product.id}
-              %>
+                :class  => 'btn-remove-from-cart',
+                :data   => {id: product.id} %>
             </td>
           </tr>
         <% end %>
