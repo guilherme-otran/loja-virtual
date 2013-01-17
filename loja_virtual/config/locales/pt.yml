@@ -6,28 +6,6 @@ pt:
   cancel: Cancelar
   title:  Loja Virtual
   all_categories: Todas as categorias
-
-  devise:
-    failure:
-      already_authenticated: 'Você já está logado.'
-      unauthenticated: 'Para continuar, você precisa logar.'
-      not_found_in_database: 'E-mail ou senha inválidos.'
-      invalid: 'E-mail ou senha inválidos.'
-    sessions:
-      signed_in: 'Seja bem-vindo!'
-      signed_out: 'Signed out successfully.'
-    registrations:
-      signed_up: 'Welcome! You have signed up successfully.'
-  simple_form:
-    titles:
-      sign_up: Registrar-se
-      sign_in: Logar
-    labels:
-      defaults: 
-        name: Nome
-        email: E-mail
-        password: Senha
-        password_confirmation: 'Confirme sua senha'
   helpers:
     select:
       prompt: Por favor selecione
@@ -37,13 +15,8 @@ pt:
         submit: Salvar %{model}
         update: Atualizar %{model}
       user:
-        create: Logar usuário
-
-    yes: Sim
-    no:  No
-    error_notification:
-      default_message: "Por favor verifique os erros no formulário."  
-
+        sessions/create: "Logar usuário"
+        registrations/create: "Registrar-se"
   menu:
     sign_up:      Registrar-se
     edit_account: Editar conta
@@ -296,6 +269,7 @@ pt:
     models:
       product:  Produto
       category: Categoria
+      user: Usuário
     attributes:
       product:
         code:         Código
@@ -306,3 +280,8 @@ pt:
         category:     Categoria
       category:
         name: Nome
+      user:
+        name: Nome
+        email: E-mail
+        password: Senha
+        password_confirmation: Confirme sua senha"
