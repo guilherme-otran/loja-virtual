@@ -6,6 +6,7 @@ module Admin::ProductsHelper
   end
 
   def format_product_price
-    @product.price? ? number_to_currency(@product.price).gsub(t('number.currency.format.unit'), "") : ""
+  	exp = Regexp.new Regexp.escape(t 'number.currency.format.unit')  +  "\s*"
+    @product.price? ? number_to_currency(@product.price).gsub(exp, "") : ""
   end
 end
