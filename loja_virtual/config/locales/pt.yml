@@ -6,6 +6,7 @@ pt:
   cancel: Cancelar
   title:  Loja Virtual
   all_categories: Todas as categorias
+
   devise:
     failure:
       already_authenticated: 'Você já está logado.'
@@ -42,6 +43,7 @@ pt:
     no:  No
     error_notification:
       default_message: "Por favor verifique os erros no formulário."  
+
   menu:
     sign_up:      Registrar-se
     edit_account: Editar conta
@@ -88,7 +90,9 @@ pt:
     category:
       select: Selecione
   
-
+  user:
+    sign_up: Realizar cadastro
+    sign_in: Fazer login
 
   date:
     abbr_day_names:
