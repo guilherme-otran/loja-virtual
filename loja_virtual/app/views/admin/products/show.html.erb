@@ -13,7 +13,7 @@
       <td> <%= @product.description %> </td>
       <td> <%= @product.category.name %> </td>
       <td> <%= number_to_currency(@product.price) %> </td>
-  	  <td> <%= image_tag @product.image_url(:thumb) if @product.image? %> </td>
+  	  <td> <%= image_tag @product.image_url(:thumb), :class => 'img-polaroid' if @product.image? %> </td>
     </tr>
   </tbody>
 </table>

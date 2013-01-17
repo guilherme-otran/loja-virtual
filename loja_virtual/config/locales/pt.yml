@@ -6,6 +6,17 @@ pt:
   cancel: Cancelar
   title:  Loja Virtual
   all_categories: Todas as categorias
+  helpers:
+    select:
+      prompt: Por favor selecione
+    submit:
+      product:
+        create: Criar %{model}
+        submit: Salvar %{model}
+        update: Atualizar %{model}
+      user:
+        sessions/create: "Logar usuário"
+        registrations/create: "Registrar-se"
   menu:
     sign_up:      Registrar-se
     edit_account: Editar conta
@@ -53,6 +64,10 @@ pt:
     category:
       select: Selecione
   
+  user:
+    sign_up: Realizar cadastro
+    sign_in: Fazer login
+
   date:
     abbr_day_names:
     - Dom
@@ -178,13 +193,6 @@ pt:
       header:
         one:    ! 'Não foi possível gravar %{model}: 1 erro'
         other:  ! 'Não foi possível gravar %{model}: %{count} erros.'
-  helpers:
-    select:
-      prompt: Por favor selecione
-    submit:
-      create: Criar %{model}
-      submit: Salvar %{model}
-      update: Atualizar %{model}
   number:
     currency:
       format:
@@ -262,6 +270,7 @@ pt:
     models:
       product:  Produto
       category: Categoria
+      user: Usuário
     attributes:
       product:
         code:         Código
@@ -272,3 +281,8 @@ pt:
         category:     Categoria
       category:
         name: Nome
+      user:
+        name: Nome
+        email: E-mail
+        password: Senha
+        password_confirmation: Confirme sua senha"

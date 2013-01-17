@@ -1,5 +1,7 @@
 LojaVirtual::Application.routes.draw do
 
+  devise_for :users
+
   get "cart/show"
 
   # Admin pages

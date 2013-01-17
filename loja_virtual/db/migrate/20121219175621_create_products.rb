@@ -9,14 +9,14 @@ class CreateProducts < ActiveRecord::Migration
       
       t.timestamps
       
-      # Relations
+      # Relationships
       t.references :category, null: false
     end
     
     # Indexes
     add_index :products, :code, unique: true
     
-    # Foreign key
+    # Foreign keys
     add_foreign_key :products, :categories
   end
 end

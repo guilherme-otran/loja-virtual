@@ -3,8 +3,8 @@ class CartController < ApplicationController
   helper_method :cart
   
   def show
-    @items = cart.items
-    @products = @items.collect { |item| Product.find(item.product_id) }
+    @items    = cart.items
+    @products = @items.collect(&:product)
     
     # GET /cart/show.html
     # GET /cart/show.json    

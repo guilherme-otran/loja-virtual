@@ -1,14 +1,14 @@
 class Product < ActiveRecord::Base
-  # Mass-storange acessors.
+  # Mass-storange settings.
   attr_accessible :category_id, :code, :description, :price, :image, :category
 
-  # Relations.
+  # Associations.
   belongs_to :category
   
   # Uploaders.
   mount_uploader :image, ImageUploader
   
-  #Validations
+  # Validations.
   validates :code,  uniqueness: true
   validates :code, :description, :price, :category_id, presence: true
   validates :code,  numericality: { only_integer: true, greater_than: 0 }
@@ -21,7 +21,7 @@ class Product < ActiveRecord::Base
       message: 'must be a JPG'
     }
     
-  # Scopes
+  # Scopes.
   scope :by_category_id, (lambda do |category_id| 
     where category_id: category_id if category_id
   end)
@@ -30,9 +30,10 @@ class Product < ActiveRecord::Base
     where "description LIKE ?", "%#{description}%" if description
   end)
   
-  #Methods
   def self.search(conditions = {})
-    Product.by_category_id(conditions[:category_id])
-      .by_description(conditions[:search]?conditions[:search][:description]:nil)
+  	my_scope = scoped
+    my_scope = my_scope.by_category_id conditions[:category_id] if conditions[:category_id]
+    my_scope = my_scope.by_description conditions[:search][:description] if conditions[:search]
+    my_scope
   end
 end

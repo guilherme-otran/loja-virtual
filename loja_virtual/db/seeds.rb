@@ -6,4 +6,6 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Category.create([{name: 'Male'}, {name: 'Female'}, {name: 'Child'}])
+admin = User.create("test@admin.com.br","root")
+
+admin.update_atribute(:admin,true)
