@@ -1,7 +1,0 @@
-Executar:
-
-rake db:create # Somente se a sua base nao existir
-
-rake db:migrate # Criar as tabelas
-
-rake categories:create # Popula a tabela de categorias

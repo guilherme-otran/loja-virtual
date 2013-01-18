@@ -6,6 +6,11 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-admin = User.create("test@admin.com.br","root")
+# admin = User.create("test@admin.com.br","root")
+# admin.update_atribute(:admin,true)
 
-admin.update_atribute(:admin,true)
+admin = User.create({name: "root", email: "test@admin.com.br", admin: true})
+
+Category.create({name: "Masculino"})
+Category.create({name: "Feminino"})
+Category.create({name: "Infantil"})
