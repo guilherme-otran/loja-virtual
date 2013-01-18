@@ -17,8 +17,8 @@ class ProductsController < ApplicationController
     paginate_products
     
     respond_to do |format|
-      if !@products.empty?
-        format.html { render "welcome/index" }
+    	format.html { render "welcome/index" }
+      if !@products.empty?  
         format.js   { render partial: "index" }
       else
         format.js {render partial: "products_not_found"}

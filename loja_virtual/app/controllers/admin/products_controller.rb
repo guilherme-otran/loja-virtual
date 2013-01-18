@@ -7,14 +7,14 @@ class Admin::ProductsController < ApplicationController
   # GET admin/products.json
   def index
     filter_products
-    paginate_products
+    # paginate_products
     
     respond_to do |format|
-      if !@products.empty?
-        format.html { render "index" }
+    	format.html { render "index" }
+      if !@products.empty?  
         format.js   { render partial: "index" }
       else
-        format.js {render partial: "products_not_found"}
+        format.js   { render partial: "products_not_found" }
       end
     end
   end
