@@ -56,4 +56,6 @@ ActiveRecord::Schema.define(:version => 20130118113036) do
 
   add_foreign_key "products", "categories", :name => "products_category_id_fk"
 
+  add_foreign_key "sales", "users", :name => "sales_user_id_fk"
+
 end
