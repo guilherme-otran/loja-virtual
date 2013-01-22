@@ -1,9 +1,10 @@
 class Product < ActiveRecord::Base
-  # Mass-storange settings.
+  # Mass-storage settings.
   attr_accessible :category_id, :code, :description, :price, :image, :category
 
   # Associations.
   belongs_to :category
+  has_many :items
   
   # Uploaders.
   mount_uploader :image, ImageUploader

@@ -9,7 +9,7 @@ class Cart
 		if product?(product_id) # The products is already in the cart.
 			false
 		else
-			@items << Item.new(product_id)
+			@items << CartItem.new(product_id)
 			true
 		end
 	end

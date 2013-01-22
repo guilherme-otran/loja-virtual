@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130118113036) do
+ActiveRecord::Schema.define(:version => 20130118114322) do
 
   create_table "categories", :force => true do |t|
     t.string   "name",       :limit => 70, :null => false
@@ -20,6 +20,18 @@ ActiveRecord::Schema.define(:version => 20130118113036) do
   end
 
   add_index "categories", ["name"], :name => "index_categories_on_name", :unique => true
+
+  create_table "items", :force => true do |t|
+    t.float    "product_price", :null => false
+    t.integer  "quantity",      :null => false
+    t.integer  "sale_id",       :null => false
+    t.integer  "product_id",    :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "items", ["product_id"], :name => "items_product_id_fk"
+  add_index "items", ["sale_id"], :name => "items_sale_id_fk"
 
   create_table "products", :force => true do |t|
     t.string   "code",        :limit => 15, :null => false
@@ -53,6 +65,9 @@ ActiveRecord::Schema.define(:version => 20130118113036) do
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+
+  add_foreign_key "items", "products", :name => "items_product_id_fk"
+  add_foreign_key "items", "sales", :name => "items_sale_id_fk"
 
   add_foreign_key "products", "categories", :name => "products_category_id_fk"
 
