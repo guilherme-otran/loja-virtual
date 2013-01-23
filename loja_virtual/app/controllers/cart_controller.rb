@@ -1,3 +1,4 @@
+require 'cart_manager'
 class CartController < ApplicationController
   include CartManager
   helper_method :cart

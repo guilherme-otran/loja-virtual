@@ -1,4 +1,7 @@
+require 'content_helper'
 module CartHelper
+	include ContentHelper
+	
   def product_number(product)
     (cart.product_index(product.id) + 1).to_s
   end
