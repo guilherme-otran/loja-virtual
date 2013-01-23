@@ -19,9 +19,9 @@ class ProductsController < ApplicationController
     respond_to do |format|
     	format.html { render "welcome/index" }
       if !@products.empty?  
-        format.js   { render partial: "index" }
+        format.js { render partial: "index" }
       else
-        format.js {render partial: "products_not_found"}
+        format.js { render partial: "products_not_found" }
       end
     end
   end
