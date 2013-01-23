@@ -5,10 +5,18 @@
 		float: left;
 	}
 
-	.filter-form {
+	.form-fields { 
+		bottom: 10px;
 		float: right;
 		position: absolute;
-		right: 0;
-		bottom: 10px;
+		right: 0px;
+
+		.filter-form {
+			display: inline;
+		}
+
+		.new-product-btn {
+			display: inline;
+		}
 	}
 }

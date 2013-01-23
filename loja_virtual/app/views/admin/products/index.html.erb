@@ -1,14 +1,23 @@
 <div class="header">
   <h1><%= t(:'products.list') %> </h1>
 
-  <div class="filter-form"> 
-    <%= form_for :search, url: admin_products_path, method: "GET", html: { id: "admin_search_form", class: "search" } do |f| %>
-      <span class="input-append">
-        <%= f.text_field :description, :id => "admin_search_field" %>
-        <%= f.submit t(:'search.button_text'), :name => nil, :id => "btn_search", :class => 'btn btn-info' %>
-      </span>
-    <% end %>
+  <div class="form-fields">
+    <div class="new-product-btn">
+      <%= link_to t(:'products.new'), new_admin_product_path, :class => 'btn' %>
+    </div>
+
+    <div class="filter-form"> 
+      <%= form_for :search, url: admin_products_path, method: "GET", html: { id: "admin_search_form", class: "search" } do |f| %>
+        <span class="input-append">
+          <%= f.text_field :description, :id => "admin_search_field" %>
+          <%= f.submit t(:'search.button_text'), :name => nil, :id => "btn_search", :class => 'btn btn-info' %>
+        </span>
+      <% end %>
+    </div>
+
+    <div class="clear"></div>
   </div>
+
   <div class="clear"></div>
 </div>
 
@@ -25,7 +34,3 @@
     <%= render :partial => "admin/products/index.html" %>
   </tbody>
 </table>
-
-<div class="form-actions">
-  <%= link_to t(:'products.new'), new_admin_product_path, :class => 'btn' %>
-</div>
