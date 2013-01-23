@@ -14,7 +14,6 @@ LojaVirtual::Application.routes.draw do
   root :to => 'welcome#index'
   match '/category/:category_id' => 'welcome#index', as: :category
 
-
   resources :products, only: [:show, :index] do
     post   "add_to_cart", on: :member
     put    "change_quantity", on: :member
@@ -22,6 +21,8 @@ LojaVirtual::Application.routes.draw do
   end
   
   match 'products/category/:category_id' => 'products#index', as: :products_category
+  
+  get "cart/finish"
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,6 +1,19 @@
 // Place all the styles related to the cart controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+// .sign-container {
+	.sign-in {
+		float: left;
+		display: inline;
+		width: 50%;
+		orientation: right;
+	}
+	.sign_up {
+		float: right;
+		display: inline;
+		width: 50%;
+	}
+// }
 
 .container-cart {
 	border-radius: 4px;
