@@ -7,7 +7,7 @@
       </div>
 
       <div class="clearfix info">
-        <span class="desc"> <a href="#"> <%= product.description %> </a> </span>
+        <span class="desc"> <%= link_to product.description, product_path(product) %> </span>
       </div>
         
       <div class="clearfix">
