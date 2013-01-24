@@ -1,0 +1,13 @@
+<% @sales.each do |sale| %>
+  <tr>
+    <td><%= sale.id %></td>
+    <td><%= sale.created_at %></td>
+    <td><%= number_to_currency(sale.total_price) %></td>
+    <td>
+      <div align="center">  
+        <%= link_to ('<i class="icon-share"></i> ').html_safe,
+                      admin_sale_path(sale), :class => 'btn' %> 
+      </div>
+    </td>
+  </tr>
+<% end %>

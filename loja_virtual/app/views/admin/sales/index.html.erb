@@ -1,0 +1,29 @@
+<div class="header">
+  <h1><%= t(:'sales.list') %> </h1>
+  <div class="form-fields">
+    <div class="filter-form"> 
+      <%= form_for :search, url: admin_sales_path, method: "GET", html: { id: "admin_search_form", class: "search" } do |f| %>
+        <span class="input-append">
+          <%= f.text_field :date, :id => "admin_date_search_field" %>
+          <%= f.submit t(:'search.button_text'), :name => nil, :id => "btn_search", :class => 'btn btn-info' %>
+        </span>
+      <% end %>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+  <div class="clear"></div>
+</div>
+
+<table class="table table-bordered table-hover">
+  <thead>
+    <th> <%= Sale.human_attribute_name(:id) %> </th>
+    <th> <%= Sale.human_attribute_name(:created_at) %> </th>
+    <th> <%= Sale.human_attribute_name(:total_price) %> </th>
+    <th colspan=3></th>
+  </thead>
+
+  <tbody  class="sortable" id="sales">
+    <%= render :partial => "admin/sales/index.html" %>
+  </tbody>
+</table>

@@ -64,6 +64,10 @@ pt:
     category:
       select: Selecione
   
+  sales:
+    list:   Listando Vendas
+    manage: Administrar Vendas
+
   user:
     sign_up: Realizar cadastro
     sign_in: Fazer login
@@ -271,6 +275,7 @@ pt:
       product:  Produto
       category: Categoria
       user: Usuário
+      sale: Venda
     attributes:
       product:
         code:         Código
@@ -286,3 +291,6 @@ pt:
         email: E-mail
         password: Senha
         password_confirmation: Confirme sua senha"
+      sale:
+        total_price: Valor total
+        created_at: Data
