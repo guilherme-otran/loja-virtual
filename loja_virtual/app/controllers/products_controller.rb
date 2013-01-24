@@ -11,10 +11,15 @@ class ProductsController < ApplicationController
   # GET /products/
   def index
     @categories = Category.all
+    @selected_category = params[:category_id]
     
     # Initialize @products
     filter_products
     paginate_products
+    
+    # If someone try access from a category link directly,
+    # we need load render the cart, and load it.
+    load_cart_items if !request.xhr?
     
     respond_to do |format|
     	format.html { render "welcome/index" }

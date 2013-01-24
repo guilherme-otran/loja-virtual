@@ -49,5 +49,7 @@
       </tbody>
     </table>
   </div>
-  <button class="btn btn-info"> <%= t(:'cart.finish') %> </button>
+  <% if !products.empty? %>
+  	<%= link_to t(:'cart.finish'), finish_buy_path, class: [:'btn', :'btn-info'] %>
+  <% end %>
 </div>

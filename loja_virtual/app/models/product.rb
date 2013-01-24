@@ -24,11 +24,11 @@ class Product < ActiveRecord::Base
     
   # Scopes.
   scope :by_category_id, (lambda do |category_id| 
-    where category_id: category_id if category_id
+    where category_id: category_id
   end)
   
   scope :by_description, (lambda do |description|
-    where "description LIKE ?", "%#{description}%" if description
+    where "description LIKE ?", "%#{description}%"
   end)
   
   def self.search(conditions = {})

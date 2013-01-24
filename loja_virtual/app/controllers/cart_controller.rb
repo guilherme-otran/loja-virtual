@@ -14,10 +14,4 @@ class CartController < ApplicationController
       format.json { render json:   @items }
     end
   end
-  
-  def finish
-  	respond_to do |format|
-  		format.html
-  	end
-  end
 end
