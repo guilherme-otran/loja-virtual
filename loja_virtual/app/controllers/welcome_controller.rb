@@ -12,7 +12,7 @@ class WelcomeController < ApplicationController
     # Load categories for filter products
     @categories = Category.all
      
-    filter_products # Don't remove - makes /products/categories/:id work
+    # filter_products
     paginate_products
     
     load_cart_items
