@@ -1,6 +1,6 @@
 class Sale < ActiveRecord::Base
 	# Mass-storange
-	attr_accessor :total_price
+	attr_accessible :total_price
 	
 	# Relationships
 	belongs_to :user

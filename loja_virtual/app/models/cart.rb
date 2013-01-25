@@ -45,4 +45,15 @@ class Cart
 	def product?(product_id)
 		!!product_index(product_id)
 	end
+
+	def to_sale(user)
+		@sale = user.sales.new
+		@sale.total_price = total_value
+		@sale.save
+		@items.each do |item| 
+			item.to_sale_item(@sale).save
+		end
+
+		@sale
+	end
 end
