@@ -21,18 +21,6 @@ ActiveRecord::Schema.define(:version => 20130118114322) do
 
   add_index "categories", ["name"], :name => "index_categories_on_name", :unique => true
 
-  create_table "items", :force => true do |t|
-    t.float    "product_price", :null => false
-    t.integer  "quantity",      :null => false
-    t.integer  "sale_id",       :null => false
-    t.integer  "product_id",    :null => false
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
-  end
-
-  add_index "items", ["product_id"], :name => "items_product_id_fk"
-  add_index "items", ["sale_id"], :name => "items_sale_id_fk"
-
   create_table "products", :force => true do |t|
     t.string   "code",        :limit => 15, :null => false
     t.text     "description",               :null => false
@@ -45,6 +33,18 @@ ActiveRecord::Schema.define(:version => 20130118114322) do
 
   add_index "products", ["category_id"], :name => "products_category_id_fk"
   add_index "products", ["code"], :name => "index_products_on_code", :unique => true
+
+  create_table "sale_items", :force => true do |t|
+    t.float    "product_price", :default => 0.0, :null => false
+    t.integer  "quantity",      :default => 0,   :null => false
+    t.integer  "sale_id",                        :null => false
+    t.integer  "product_id",                     :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+  end
+
+  add_index "sale_items", ["product_id"], :name => "sale_items_product_id_fk"
+  add_index "sale_items", ["sale_id"], :name => "sale_items_sale_id_fk"
 
   create_table "sales", :force => true do |t|
     t.integer  "user_id",     :null => false
@@ -66,10 +66,10 @@ ActiveRecord::Schema.define(:version => 20130118114322) do
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
 
-  add_foreign_key "items", "products", :name => "items_product_id_fk"
-  add_foreign_key "items", "sales", :name => "items_sale_id_fk"
-
   add_foreign_key "products", "categories", :name => "products_category_id_fk"
+
+  add_foreign_key "sale_items", "products", :name => "sale_items_product_id_fk"
+  add_foreign_key "sale_items", "sales", :name => "sale_items_sale_id_fk"
 
   add_foreign_key "sales", "users", :name => "sales_user_id_fk"
 

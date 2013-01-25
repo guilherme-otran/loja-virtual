@@ -1,4 +1,4 @@
-class AddSaleItemTable < ActiveRecord::Migration
+class CreateSaleItems < ActiveRecord::Migration
   def change
     create_table :sale_items do |t|
       t.float       :product_price, null: false, default: 0
@@ -10,8 +10,8 @@ class AddSaleItemTable < ActiveRecord::Migration
       t.timestamps
     end
 
-    add_foreign_key :items, :products
-    add_foreign_key :items, :sales
+    add_foreign_key :sale_items, :products
+    add_foreign_key :sale_items, :sales
   end
 end
   
