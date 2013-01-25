@@ -1,4 +1,5 @@
 require 'cart_manager'
+
 class FinishBuyController < ApplicationController
 	before_filter :root_path_if_cart_empty
 	
@@ -8,11 +9,12 @@ class FinishBuyController < ApplicationController
 		if user_signed_in?
 			# redirect_to finish_buy_pay_path
 			self.pay
-			
-			return
+		else
+			#TODO show error
+			redirect_to finish_buy_login_path
 		end
 		
-		redirect_to finish_buy_login_path
+		
 	end
 	
 	def login
@@ -26,9 +28,22 @@ class FinishBuyController < ApplicationController
 	end
 	
   def pay
-  	if !user_signed_in?
-  		# TODO: error
-  	end
+  	#binding.pry 
+  	payment = Moiper::Payment.new(
+		  :description      => "A chair",
+		  :price            => 1.99,
+		  :id               => "some more unique id",
+		  :return_url       => root_url,
+		  :notification_url => "http://example.org/moip/notification"
+		)
+
+		response = payment.checkout
+
+		if response.success?
+		  redirect_to response.checkout_url
+		else
+		  render :text => response.errors.to_sentence
+		end
   end
   
   private
