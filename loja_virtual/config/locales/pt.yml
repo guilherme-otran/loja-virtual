@@ -67,6 +67,8 @@ pt:
   sales:
     list:   Listando Vendas
     manage: Administrar Vendas
+    total_value: "Valor total das vendas: "
+    total_number: "Número de vendas: "
 
   user:
     sign_up: Realizar cadastro

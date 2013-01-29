@@ -23,6 +23,21 @@
     <th colspan=3></th>
   </thead>
 
+  <tfoot>
+    <tr>
+      <td colspan="6" class="sales">
+        <label class="label-total"> <%= t(:'sales.total_number') %></label>
+        <%= total_number(@sales) %>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="6" class="sales">
+        <label class="label-total"> <%= t(:'sales.total_value') %> </label> 
+        <%= number_to_currency(total_value(@sales))%> <br />        
+      </td>
+    </tr>
+  </tfoot>
+
   <tbody  class="sortable" id="sales">
     <%= render :partial => "admin/sales/index.html" %>
   </tbody>
