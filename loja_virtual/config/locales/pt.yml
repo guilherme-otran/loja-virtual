@@ -67,6 +67,16 @@ pt:
   sales:
     list:   Listando Vendas
     manage: Administrar Vendas
+<<<<<<< HEAD
+    total_value: "Valor total das vendas: "
+    total_number: "Número de vendas: "
+    client: Cliente
+    see_details: Ver detalhes
+    quantity: Quantidade
+    search:
+      date:
+        start: De
+        end:   Até
 
   user:
     sign_up: Realizar cadastro
