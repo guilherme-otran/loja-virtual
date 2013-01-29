@@ -8,11 +8,11 @@
         <span class="input-prepend input-append">
         	<span>
         		<span class="add-on"><%= t :'sales.search.date.start' %></span>
-          	<%= f.text_field :date_start, :class => "admin-date-search-field" %>
+          	<%= f.text_field :date_start, :class => "admin-date-search-field", :id => "date_start", :readonly => "true" %>
           </span>
           <span>
           	<span class="add-on date-end"><%= t :'sales.search.date.end' %></span>
-          	<%= f.text_field :date_end,   :class => "admin-date-search-field" %>
+          	<%= f.text_field :date_end,   :class => "admin-date-search-field", :id => "date_end", :readonly => "true" %>
           </span>
           <%= f.submit t(:'search.button_text'), :name => nil, :id => "btn_search", :class => 'btn btn-info' %>
         </span>
