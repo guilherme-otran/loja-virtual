@@ -17,4 +17,7 @@
     <li>
       <%= link_to('Admin Panel', admin_root_path) if current_user.try(:admin?) %>
     </li>
+    <li>
+      <%= link_to('Minhas compras', user_sales_path) if user_signed_in? %>
+    </li>
 </ul>

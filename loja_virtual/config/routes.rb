@@ -13,6 +13,7 @@ LojaVirtual::Application.routes.draw do
   
   # Client pages
   root :to => 'welcome#index'
+  match '/user/sales' => 'users#sales'
   match '/category/:category_id' => 'welcome#index', as: :category
   match 'products/category/:category_id' => 'products#index', as: :products_category
   
