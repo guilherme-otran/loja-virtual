@@ -1,6 +1,6 @@
 require 'product_filter_paginator'
 
-class Admin::ProductsController < ApplicationController
+class Admin::ProductsController < Admin::ApplicationController
   include ProductFilterPaginator
 
   # GET admin/products

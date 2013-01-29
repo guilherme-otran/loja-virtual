@@ -1,4 +1,4 @@
-class Admin::SalesController < ApplicationController
+class Admin::SalesController < Admin::ApplicationController
   def index
     @sales = Sale.scoped
     @sales = @sales.by_created_date(params[:date]) if params[:date]

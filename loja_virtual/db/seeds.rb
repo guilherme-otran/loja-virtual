@@ -6,11 +6,18 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-# admin = User.create("test@admin.com.br","root")
-# admin.update_atribute(:admin,true)
+# Admin Account
+User.find_or_create_by_email(
+  name:                   "System Admin", 
+  email:                  "test@admin.com.br", 
+  password:               "administrator", 
+  password_confirmation:  "administrator", 
+  admin:                  true
+)
 
-admin = User.create({name: "root", email: "test@admin.com.br", admin: true})
+# Categories
+["Masculino","Feminino","Infantil"].each do |cat|
+  Category.find_or_create_by_name(cat)
+end
 
-Category.create({name: "Masculino"})
-Category.create({name: "Feminino"})
-Category.create({name: "Infantil"})
+puts "Running seed rake."

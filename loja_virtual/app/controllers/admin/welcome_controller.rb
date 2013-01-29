@@ -1,4 +1,4 @@
-class Admin::WelcomeController < ApplicationController
+class Admin::WelcomeController < Admin::ApplicationController
   #GET /
   def index
     respond_to do |format|
