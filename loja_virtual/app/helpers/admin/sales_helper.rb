@@ -11,19 +11,19 @@ module Admin::SalesHelper
 		User.find(id).name
 	end
 
-	def product_category(id)
-		product(id).category.name
+	def product_category(sale_item)
+		product(sale_item).category.name
 	end
 
-	def product_description(id)
-		product(id).description
+	def product_description(sale_item)
+		product(sale_item).description
 	end
 
-	def product_code(id)
-		product(id).code
+	def product_code(sale_item)
+		product(sale_item).code
 	end
 
-	def product(id)
-		Product.find(id)
+	def product(sale_item)
+		Product.find(sale_item.product_id)
 	end
 end

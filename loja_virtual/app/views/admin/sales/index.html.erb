@@ -5,13 +5,13 @@
   <div class="form-fields">
     <div class="filter-form"> 
       <%= form_for :search, url: admin_sales_path, method: "GET", html: { id: "admin_date_search_form", class: "search" } do |f| %>
-        <span class="input-append">
+        <span class="input-prepend input-append">
         	<span>
-        		<p><%= t :'sales.search.date.start' %></p>
+        		<span class="add-on"><%= t :'sales.search.date.start' %></span>
           	<%= f.text_field :date_start, :class => "admin-date-search-field" %>
           </span>
           <span>
-          	<p><%= t :'sales.search.date.end' %></p>
+          	<span class="add-on date-end"><%= t :'sales.search.date.end' %></span>
           	<%= f.text_field :date_end,   :class => "admin-date-search-field" %>
           </span>
           <%= f.submit t(:'search.button_text'), :name => nil, :id => "btn_search", :class => 'btn btn-info' %>
@@ -31,19 +31,19 @@
     <th> <%= Sale.human_attribute_name(:created_at) %> </th>
     <th> <%= Sale.human_attribute_name(:total_price) %> </th>
     <th> <%= t(:'sales.client') %> </th>
-    <th colspan=3></th>
+    <th colspan=3> </th>
   </thead>
 
   <tfoot>
     <tr>
-      <td colspan="6" class="sales">
-        <label class="label-total"> <%= t(:'sales.total_number') %></label>
+      <td colspan="6">
+        <label class="sales-label-bold"> <%= t(:'sales.total_number') %></label>
         <%= total_number(@sales) %>
       </td>
     </tr>
     <tr>
-      <td colspan="6" class="sales">
-        <label class="label-total"> <%= t(:'sales.total_value') %> </label> 
+      <td colspan="6">
+        <label class="sales-label-bold"> <%= t(:'sales.total_value') %> </label> 
         <%= number_to_currency(total_value(@sales))%> <br />        
       </td>
     </tr>
