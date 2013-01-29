@@ -72,6 +72,7 @@ pt:
     client: Cliente
     see_details: Ver detalhes
     quantity: Quantidade
+    sale_id: ID da venda
     search:
       date:
         start: De

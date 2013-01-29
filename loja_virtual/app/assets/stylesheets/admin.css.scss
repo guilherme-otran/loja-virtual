@@ -6,9 +6,9 @@
 	}
 
 	.form-fields { 
-		bottom: 10px;
+		bottom: -20px;
 		float: right;
-		position: absolute;
+		position: relative;
 		right: 0px;
 
 		.filter-form {
@@ -18,28 +18,20 @@
 		.new-product-btn {
 			display: inline;
 		}
+
+		.add-on.date-end:first-child {
+			-webkit-border-radius: 0;
+			-moz-border-radius: 0;
+			border-radius: 0;
+		}
 	}
-}
-
-.sales {
-	text-align: right;
-}
-
-.label-total {
-	display: inline;
-	font-weight: bold;
 }
 
 .sale-info {
-	font-size: 1.5em;
-
-	.sales-label {
-		display: inline;
-		font-weight: bold;
-		font-size: 1.0em;
-	}
+	font-size: 1.2em;
 }
 
-.sale-date {
-	font-size: 0.9em;
+.sales-label-bold {
+	display: inline;
+	font-weight: bold;
 }
