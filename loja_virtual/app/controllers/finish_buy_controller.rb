@@ -30,7 +30,7 @@ class FinishBuyController < ApplicationController
   def pay
   	payment = Moiper::Payment.new(
 		  :description      => "Compra na Loja Virtual",
-		  :price            => cart.total_price,
+		  :price            => cart.total_value,
 		  :id               => "lv_compra_#{(Sale.last.id.to_i + 1)}",
 		  :return_url       => root_url,																# TODO
 		  :notification_url => "http://example.org/moip/notification"  	# TODO
