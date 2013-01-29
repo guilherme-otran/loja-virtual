@@ -69,6 +69,9 @@ pt:
     manage: Administrar Vendas
     total_value: "Valor total das vendas: "
     total_number: "Número de vendas: "
+    client: Cliente
+    see_details: Ver detalhes
+    quantity: Quantidade
 
   user:
     sign_up: Realizar cadastro

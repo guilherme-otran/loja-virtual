@@ -1,5 +1,7 @@
 <div class="header">
   <h1><%= t(:'sales.list') %> </h1>
+  
+  <!-- FILTER -->
   <div class="form-fields">
     <div class="filter-form"> 
       <%= form_for :search, url: admin_sales_path, method: "GET", html: { id: "admin_search_form", class: "search" } do |f| %>
@@ -12,6 +14,7 @@
 
     <div class="clear"></div>
   </div>
+  <!-- END FILTER -->
   <div class="clear"></div>
 </div>
 
@@ -20,6 +23,7 @@
     <th> <%= Sale.human_attribute_name(:id) %> </th>
     <th> <%= Sale.human_attribute_name(:created_at) %> </th>
     <th> <%= Sale.human_attribute_name(:total_price) %> </th>
+    <th> <%= t(:'sales.client') %> </th>
     <th colspan=3></th>
   </thead>
 

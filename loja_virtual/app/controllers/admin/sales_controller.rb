@@ -7,4 +7,14 @@ class Admin::SalesController < ApplicationController
       f.html
     end
   end
+
+  def show
+  	@sale = Sale.find(params[:id])
+  	@sale_items = @sale.sale_items
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @product }
+    end
+  end
 end

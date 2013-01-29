@@ -29,3 +29,17 @@
 	display: inline;
 	font-weight: bold;
 }
+
+.sale-info {
+	font-size: 1.5em;
+
+	.sales-label {
+		display: inline;
+		font-weight: bold;
+		font-size: 1.0em;
+	}
+}
+
+.sale-date {
+	font-size: 0.9em;
+}
