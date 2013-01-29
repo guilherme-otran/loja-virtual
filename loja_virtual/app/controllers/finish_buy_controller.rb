@@ -28,13 +28,10 @@ class FinishBuyController < ApplicationController
 	end
 	
   def pay
-		@sale = cart.to_sale(current_user)
-		#binding.pry
-
   	payment = Moiper::Payment.new(
 		  :description      => "Compra na Loja Virtual",
-		  :price            => @sale.total_price,
-		  :id               => "lv_compra_#{@sale.id}",
+		  :price            => cart.total_price,
+		  :id               => "lv_compra_#{(Sale.last.id.to_i + 1)}",
 		  :return_url       => root_url,																# TODO
 		  :notification_url => "http://example.org/moip/notification"  	# TODO
 		)
@@ -42,6 +39,7 @@ class FinishBuyController < ApplicationController
 		response = payment.checkout
 
 		if response.success?
+      @sale = cart.to_sale(current_user)
 			cart.items.clear
 		  redirect_to response.checkout_url
 		else
