@@ -67,7 +67,6 @@ pt:
   sales:
     list:   Listando Vendas
     manage: Administrar Vendas
-<<<<<<< HEAD
     total_value: "Valor total das vendas: "
     total_number: "Número de vendas: "
     client: Cliente
