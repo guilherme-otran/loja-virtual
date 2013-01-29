@@ -25,3 +25,6 @@ jQuery ($) ->
     
     # Refresh search form link
     $("#search_form").get(0).setAttribute "action", selected.data("ajax-href")
+    
+  $('input.admin-date-search-field').datepicker();
+  $('input.admin-date-search-field').datepicker("option", "dateFormat", 'yy-mm-dd');
