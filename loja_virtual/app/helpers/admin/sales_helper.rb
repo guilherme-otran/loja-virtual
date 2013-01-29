@@ -3,10 +3,6 @@ module Admin::SalesHelper
 		sales.inject(0) { |memo, sale| memo += sale.total_price }
 	end
 
-	def total_number(sales)
-		sales.inject(0) { |memo, sale| memo += 1 }
-	end
-
 	def username(id)
 		User.find(id).name
 	end

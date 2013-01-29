@@ -37,14 +37,20 @@
   <tfoot>
     <tr>
       <td colspan="6">
+        <label class="sales-label-bold"> <%= t(:'sales.total_page_value') %> </label> 
+        <%= number_to_currency(total_value(@sales))%> <br />        
+      </td>
+    </tr>
+    <tr>
+      <td colspan="6">
         <label class="sales-label-bold"> <%= t(:'sales.total_number') %></label>
-        <%= total_number(@sales) %>
+        <%= @sales.total_count %>
       </td>
     </tr>
     <tr>
       <td colspan="6">
         <label class="sales-label-bold"> <%= t(:'sales.total_value') %> </label> 
-        <%= number_to_currency(total_value(@sales))%> <br />        
+        <%= number_to_currency(@sales.period_total_price)%> <br />        
       </td>
     </tr>
   </tfoot>

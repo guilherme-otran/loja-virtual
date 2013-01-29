@@ -67,7 +67,8 @@ pt:
   sales:
     list:   Listando Vendas
     manage: Administrar Vendas
-    total_value: "Valor total das vendas: "
+    total_value: "Valor total das vendas no período: "
+    total_page_value: "Valor total nesta página: "
     total_number: "Número de vendas: "
     client: Cliente
     see_details: Ver detalhes
