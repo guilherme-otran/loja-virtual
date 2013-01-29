@@ -65,14 +65,21 @@ pt:
       select: Selecione
   
   sales:
-    list:   Listando Vendas
-    manage: Administrar Vendas
-    total_value: "Valor total das vendas: "
+    date:         Data da venda
+    list:         Listando Vendas
+    manage:       Administrar Vendas
+    total_value:  "Valor total das vendas: "
     total_number: "Número de vendas: "
-    client: Cliente
-    see_details: Ver detalhes
-    quantity: Quantidade
-    sale_id: ID da venda
+    client:       Cliente
+    see_details:  Ver detalhes
+    quantity:     Quantidade
+    sale_id:      ID da venda
+    sum:          Total da venda
+    product:
+      price:
+        unity:  Valor unitário
+        total:  Valor total
+
     search:
       date:
         start: De
@@ -273,6 +280,7 @@ pt:
       default: ! '%A, %d de %B de %Y, %H:%M h'
       long: ! '%A, %d de %B de %Y, %H:%M h'
       short: ! '%d/%m, %H:%M h'
+      custom: ! '%d/%m/%Y - %H:%M:%S'
     pm: ''
   # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
   activemodel:
