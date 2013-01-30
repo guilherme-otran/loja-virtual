@@ -1,8 +1,4 @@
 module Admin::SalesHelper
-	def total_value(sales)
-		sales.inject(0) { |memo, sale| memo + sale.total_price }
-	end
-
 	def username(id)
 		User.find(id).name
 	end

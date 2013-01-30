@@ -68,7 +68,9 @@ pt:
     date:         Data da venda
     list:         Listando Vendas
     manage:       Administrar Vendas
-    total_value:  "Valor total das vendas: "
+    list:   Listando Vendas
+    manage: Administrar Vendas
+    total_value: "Valor total das vendas no período: "
     total_number: "Número de vendas: "
     client:       Cliente
     see_details:  Ver detalhes
