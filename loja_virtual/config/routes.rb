@@ -9,6 +9,7 @@ LojaVirtual::Application.routes.draw do
     root :to => 'welcome#index'
     resources :products
     resources :sales
+    match '/products/category/:category_id' => 'products#index', :as => :products_category
   end
   
   # Client pages
@@ -16,12 +17,13 @@ LojaVirtual::Application.routes.draw do
   match '/user/sales' => 'users#sales'
   match '/category/:category_id' => 'welcome#index', as: :category
   match 'products/category/:category_id' => 'products#index', as: :products_category
+
   
   resources :products, only: [:show, :index] do
     post   "add_to_cart", on: :member
     put    "change_quantity", on: :member
     delete "remove_from_cart", on: :member
-  end
+  end 
   
   match 'finish_buy/' => 'finish_buy#index'
   namespace :finish_buy do
