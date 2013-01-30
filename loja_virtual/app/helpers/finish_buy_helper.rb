@@ -1,4 +1,4 @@
-require 'content_helper'
+require 'devise_utils'
 module FinishBuyHelper
-	include ContentHelper
+	include DeviseUtils::ContentHelper
 end
