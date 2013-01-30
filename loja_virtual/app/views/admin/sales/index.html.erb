@@ -29,17 +29,18 @@
   <thead>
     <th> <%= Sale.human_attribute_name(:id) %> </th>
     <th> <%= Sale.human_attribute_name(:created_at) %> </th>
-    <th> <%= Sale.human_attribute_name(:total_price) %> </th>
     <th> <%= t(:'sales.client') %> </th>
+    <th> <%= Sale.human_attribute_name(:total_price) %> </th>
     <th colspan=3> </th>
   </thead>
 
   <tfoot>
     <tr>
-      <td colspan="6">
-        <label class="sales-label-bold"> <%= t(:'sales.total_value') %> </label> 
-        <%= number_to_currency(@sales.period_total_price)%> <br />        
+      <td colspan="3">
+        <label class="sales-label-bold"> <%= t(:'sales.total_value') %> </label>
       </td>
+      <td><%= number_to_currency(@sales.period_total_price)%></td>
+      <td></td>
     </tr>
   </tfoot>
 

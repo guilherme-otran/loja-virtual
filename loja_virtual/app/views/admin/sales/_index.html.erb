@@ -2,8 +2,8 @@
   <tr>
     <td> <%= sale.id %> </td>
     <td> <%= l(sale.created_at, format: :custom) %> </td>
-    <td> <%= number_to_currency(sale.total_price) %> </td>
     <td> <%= username(sale.user_id) %> </td>
+    <td> <%= number_to_currency(sale.total_price) %> </td>
     <td>
       <div align="center">  
         <%= link_to t(:'sales.see_details'),
