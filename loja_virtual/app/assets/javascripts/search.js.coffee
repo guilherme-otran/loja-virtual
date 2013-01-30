@@ -26,7 +26,7 @@ jQuery ($) ->
     # Refresh search form link
     $("#search_form").get(0).setAttribute "action", selected.data("ajax-href")
     
-  $('input.admin-date-search-field').datepicker({dateFormat: 'yy-mm-dd'});
+  $('input.admin-date-search-field').datepicker({dateFormat: 'dd-mm-yy'});
 
   date_end_field = $("#date_end")
   $("#date_start").datepicker "option", "onClose", (selectedDate) -> 
