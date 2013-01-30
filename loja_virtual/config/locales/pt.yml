@@ -68,8 +68,6 @@ pt:
     date:         Data da venda
     list:         Listando Vendas
     manage:       Administrar Vendas
-    list:   Listando Vendas
-    manage: Administrar Vendas
     total_value: "Valor total das vendas no período: "
     total_number: "Número de vendas: "
     client:       Cliente
@@ -86,6 +84,11 @@ pt:
       date:
         start: De
         end:   Até
+
+  purchases:
+    total: Total da compra
+    unity_price: Valor unit.
+    mine: Minhas Compras
 
   user:
     sign_up: Realizar cadastro

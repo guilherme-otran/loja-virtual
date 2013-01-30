@@ -1,55 +1,25 @@
-<h1>Minhas Compras</h1>
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th>
-        Produto
-      </th>
-      <th>
-        Quantidade
-      </th>
-      <th>
-        Valor do(s) produto(s)
-      </th>
-      <th>
-        Imagem
-      </th>
-      <th>
-        Data da compra
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @sales.each do |sale| %>
-      <tr>
-        <td colspan=4>
-          <b><%= "Compra ##{sale_number sale}" %></b>
-        </td>
-        <td>
-          <b> <%= l(sale.created_at, format: :custom)%> </b>
-        </td>
-      </tr>
-      <% sale.sale_items.each do |item| %>
-        <tr>
-          <td>
-            <span class="desc"> <%= link_to item.product.description, product_path(item.product) %> </span>
-          </td>
-          <td>
-            <%= item.quantity %>
-          </td>
-          <td>
-              <%= total_value item %>
-            </td>
-          <td>
-            <%= image_tag item.product.image_url(:thumb)  if item.product.image? %>
-          </td>
-          <td></td>
-        </tr>
-      <% end %>
-      <tr>
-        <td colspan=2>Valor total da compra:</td>
-        <td> <%= total_value sale %> </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<h1> <%= t(:'purchases.mine') %> </h1>
+
+<div class="all-purchases">
+  <% @sales.each do |sale| %>
+    <div class="single-purchase">
+      <div class="purchase-header">
+        <h3> <%= "Compra ##{sale_number sale}" %> </h3>
+        <h5> <%= l(sale.created_at, format: :custom) %> </h5>
+        <div class="clear"> </div>
+      </div>
+      
+      <%= render :partial => "sales", locals: { sale: sale } %>
+
+      <div class="purchase-footer">
+        <p>
+          <%= t(:'purchases.total') %>:
+          <span class="total-value">
+            <%= number_to_currency(total_value sale) %>
+          </span> 
+        </p>
+        <div class="clear"> </div>
+      </div>
+    </div>
+  <% end %>
+</div>
