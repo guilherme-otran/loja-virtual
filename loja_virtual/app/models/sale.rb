@@ -12,18 +12,22 @@ class Sale < ActiveRecord::Base
 
 	# Scopes
 	
+	# Behavior of filter: all if nil. 
 	scope :filter_date, (lambda do |dates|
 		if dates
+			dates[:date_start] = Time.zone.parse(dates[:date_start] || "")
+			dates[:date_end]   = Time.zone.parse(dates[:date_end] || "")
+			
 			if dates[:date_start] && dates[:date_end]
 				return where 'created_at between ? and ?', 
-								Time.zone.parse(dates[:date_start]).utc, 
-								Time.zone.parse(dates[:date_end]).utc.tomorrow
+								dates[:date_start].utc, 
+								dates[:date_end].utc.tomorrow
 			end
 			if dates[:date_start]
-				return where 'created_at > ?', Time.zone.parse(dates[:date_start]).utc
+				return where 'created_at > ?', dates[:date_start].utc
 			end
 			if dates[:date_end]
-				return where 'created_at < ?', Time.zone.parse(dates[:date_end]).utc.tomorrow
+				return where 'created_at < ?', dates[:date_end].utc.tomorrow
 			end
 		end
 	end)
