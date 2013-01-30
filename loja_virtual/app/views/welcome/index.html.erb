@@ -15,7 +15,7 @@
     <% end %> 
   </select>
 
-  <%= form_for :search, url: search_form_path, method: "GET", html: { id: "search_form", class: "search" } do |f| %>
+  <%= simple_form_for :search, url: search_form_path, method: "GET", html: { id: "search_form", class: "search" } do |f| %>
     <span class="input-append">
       <%= f.text_field :description, :id => "search_field" %>
       <%= f.submit t(:'search.button_text'), :name => nil, 

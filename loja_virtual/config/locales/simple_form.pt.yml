@@ -7,6 +7,11 @@ pt:
     titles:
       sign_up: Registrar-se
       sign_in: Logar
+    placeholders:
+      defaults:
+        name: Digite seu Nome
+        description: "Pesquisar por descrição..."
+        code: "Pesquisar por código..."
     labels:
       defaults: 
         name: Nome

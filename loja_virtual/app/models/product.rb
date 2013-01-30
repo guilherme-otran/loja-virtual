@@ -30,11 +30,16 @@ class Product < ActiveRecord::Base
   scope :by_description, (lambda do |description|
     where "description LIKE ?", "%#{description}%"
   end)
+
+  scope :by_code, (lambda do |code|
+    where "code LIKE ?", "%#{code}%"
+  end)
   
   def self.search(conditions = {})
   	my_scope = scoped
     my_scope = my_scope.by_category_id conditions[:category_id] if conditions[:category_id]
-    my_scope = my_scope.by_description conditions[:search][:description] if conditions[:search]
+    my_scope = my_scope.by_description conditions[:search][:description] if conditions[:search] && conditions[:search][:description]
+    my_scope = my_scope.by_code conditions[:search][:code] if conditions[:search] && conditions[:search][:code]
     my_scope
   end
 end

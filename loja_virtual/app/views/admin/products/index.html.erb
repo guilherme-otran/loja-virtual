@@ -20,9 +20,9 @@
         <% end %> 
       </select>
 
-      <%= form_for :search, url: admin_products_path, method: "GET", html: { id: "search_form", class: "search" } do |f| %>
+      <%= simple_form_for :search, url: admin_products_path, method: "GET", html: { id: "search_form", class: "search" } do |f| %>
         <span class="input-append">
-          <%= f.text_field :description, :id => "search_field" %>
+          <%= f.text_field :code, :id => "search_field", placeholder: t('code') %>
           <%= f.submit t(:'search.button_text'), :name => nil, :id => "btn_search", :class => 'btn btn-info' %>
         </span>
       <% end %>
