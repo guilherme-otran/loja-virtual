@@ -1,7 +1,7 @@
 class Admin::SalesController < ApplicationController
   def index
     @sales = Sale.scoped
-    @sales = @sales.by_between_date(params[:search][:date_start], params[:search][:date_end]) if params[:search]
+    @sales = @sales.filter_date params[:search]
     class << @sales
     	attr_accessor :period_total_price
     end

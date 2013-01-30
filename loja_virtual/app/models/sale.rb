@@ -11,7 +11,20 @@ class Sale < ActiveRecord::Base
 	validates :total_price, numericality: { only_float: true, greater_than: 0 }
 
 	# Scopes
-	scope :by_between_date, (lambda do |start_date, end_date|
-		where 'created_at between ? and ?', start_date, end_date
+	
+	scope :filter_date, (lambda do |dates|
+		if dates
+			if dates[:date_start] && dates[:date_end]
+				return where 'created_at between ? and ?', 
+								Time.zone.parse(dates[:date_start]).utc, 
+								Time.zone.parse(dates[:date_end]).utc.tomorrow
+			end
+			if dates[:date_start]
+				return where 'created_at > ?', Time.zone.parse(dates[:date_start]).utc
+			end
+			if dates[:date_end]
+				return where 'created_at < ?', Time.zone.parse(dates[:date_end]).utc.tomorrow
+			end
+		end
 	end)
 end
