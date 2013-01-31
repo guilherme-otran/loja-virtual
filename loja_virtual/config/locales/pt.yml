@@ -53,6 +53,10 @@ pt:
     error:
       form_contents: Por favor verifique os erros abaixo.
   
+  purchase:
+    show_details: 'Clique para exibir mais detalhes'
+    hide_details: 'Clique para ocultar os detalhes'
+
   products:
     list:         Listando Produtos
     new:          Novo Produto

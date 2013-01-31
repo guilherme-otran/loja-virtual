@@ -1,6 +1,6 @@
 module UsersHelper
   def sale_number(sale)
-    current_user.sales.index(sale)
+    current_user.sales.index(sale).to_i + 1
   end
 
   def total_value(arg)

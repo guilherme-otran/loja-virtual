@@ -4,7 +4,7 @@
   <% @sales.each do |sale| %>
     <div class="single-purchase">
       <div class="purchase-header">
-        <h3> <%= "Compra ##{sale_number sale}" %> </h3>
+        <h3> <%= "Compra #{sale_number sale}" %> </h3>
         <h5> <%= l(sale.created_at, format: :custom) %> </h5>
         <div class="clear"> </div>
       </div>
@@ -14,8 +14,8 @@
       </div>
 
       <div class="purchase-footer">
-        <div class="label-details">
-          Clique para ver detalhes
+        <div class="label-details" data-info-close="<%=t('purchase.hide_details')%>" data-info-open="<%=t('purchase.show_details')%>" >
+          <%= t('purchase.show_details') %>
         </div>
         <p>
           <%= t(:'purchases.total') %>:
