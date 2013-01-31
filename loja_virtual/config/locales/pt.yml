@@ -92,7 +92,7 @@ pt:
   purchases:
     total: Total da compra
     unity_price: Valor unit.
-    mine: Minhas Compras
+    mine: Minhas compras
 
   user:
     sign_up: Realizar cadastro

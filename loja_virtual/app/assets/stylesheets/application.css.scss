@@ -26,7 +26,10 @@
 	min-height: 100px;
 }
 
-
-div.x {
-  background-color: green;
+.navbar {
+  div.username {
+    position: absolute;
+    right: 35px;
+    top: 10px;
+  }
 }
