@@ -20,4 +20,7 @@
     <li>
       <%= link_to('Minhas compras', user_sales_path) if user_signed_in? %>
     </li>
+    <li>
+      <%= t('user.welcome') + " " + current_user.name + "!" if user_signed_in? %>
+    </li>
 </ul>
