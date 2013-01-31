@@ -298,6 +298,11 @@ pt:
   activerecord:
     errors:
       <<: *errors
+      models:
+        user:
+          attributes:
+            password:
+              too_short: "Tamanho mínimo requerido: %{count} caracteres."
     models:
       product:  Produto
       category: Categoria
