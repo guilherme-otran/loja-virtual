@@ -1,11 +1,8 @@
 jQuery ($) ->
   $(".purchase-items").hide()
 
-  $(".purchase-header").on "click", ->
-    $(this).siblings(".purchase-items").slideToggle("fast")
-
-  $(".purchase-footer").on "click", ->
-    $(this).siblings(".purchase-items").slideToggle("fast")
+  $(".single-purchase").on "click", ->
+    $(this).children(".purchase-items").stop().slideToggle("fast")
   
   $(".single-purchase").toggle ->
       details = $(this).children().children(".label-details")
