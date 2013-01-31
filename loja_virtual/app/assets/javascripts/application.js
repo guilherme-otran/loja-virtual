@@ -11,7 +11,9 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
+//= require jquery.ui.datepicker
+//= require jquery.ui.datepicker-pt-BR
+//= require jquery.ui.sortable
 //= require jquery_ujs
 //= require bootstrap
-//= require jquery-ui-1.9.2.custom.min
 //= require_tree .
