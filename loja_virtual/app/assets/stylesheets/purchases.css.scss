@@ -1,9 +1,11 @@
 .all-purchases {
 	.single-purchase {
+		color: gray;
 		margin-bottom: 25px;
+		text-shadow: 0 1px 0 white;
+		background-color: rgb(236, 236, 236);
 
 		.purchase-header {
-			background-color: rgb(236, 236, 236);
 			border: 1px solid rgb(179, 179, 179);
 			border-bottom: none;
 			border-radius: 5px 5px 0 0;
@@ -11,11 +13,9 @@
 			padding: 0 15px 0 15px;
 
 			h3 {
-				color: rgb(126, 126, 126);
 				float: left;
 				line-height: 1.7em;
 				margin: 0;
-				text-shadow: 0px 1px 0px rgb(255, 255, 255), 0 -1px 0 rgb(43, 43, 43);
 			}
 
 			h5 {
@@ -23,7 +23,33 @@
 				float: right;
 				line-height: 3em;	
 				margin: 0;
-				text-shadow: 0px 1px 0px rgb(255, 255, 255);
+			}
+		}
+
+		.purchase-footer {
+			border: 1px solid rgb(179, 179, 179);
+			border-radius: 0 0 5px 5px;
+			border-top: none;
+			cursor: pointer;
+			line-height: 2em;
+
+			p {
+				float: right;
+				font-size: 1.1em;
+				line-height: inherit;
+				margin: 0;
+				padding-right: 10px;
+			}
+
+			.label-details {
+				float: left;
+				margin-left: 15px;
+			}
+
+			.total-value {
+				color: rgb(88, 88, 88);
+				font-size: 1.1em;
+				font-weight: bold;
 			}
 		}
 
@@ -71,8 +97,11 @@
 				table {
 					margin: 0 10px;
 
+					td {
+						color: black;
+					}
+
 					th {
-						color: gray;
 						font-weight: 300;
 					}
 				}
@@ -97,30 +126,6 @@
 
 		.thumbnails > li {
 			margin-left: 10px;
-		}
-
-		.purchase-footer {
-			background-color: rgb(236, 236, 236);
-			border: 1px solid rgb(179, 179, 179);
-			border-radius: 0 0 5px 5px;
-			border-top: none;
-			cursor: pointer;
-
-			p {
-				color: gray;
-				float: right;
-				font-size: 1.1em;
-				line-height: 2em;
-				margin: 0;
-				padding-right: 10px;
-				text-shadow: 0 1px 0 white;
-			}
-
-			.total-value {
-				color: rgb(88, 88, 88);
-				font-size: 1.1em;
-				font-weight: bold;
-			}
 		}
 	}
 }

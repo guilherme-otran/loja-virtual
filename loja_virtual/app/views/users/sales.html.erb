@@ -9,9 +9,14 @@
         <div class="clear"> </div>
       </div>
       
-      <%= render :partial => "sales", locals: { sale: sale } %>
+      <div class="purchase-items">
+        <%= render :partial => "sales", locals: { sale: sale } %>
+      </div>
 
       <div class="purchase-footer">
+        <div class="label-details">
+          Clique para ver detalhes
+        </div>
         <p>
           <%= t(:'purchases.total') %>:
           <span class="total-value">
