@@ -1,7 +1,7 @@
 jQuery(function($){
-	var search_field = $("input#admin_search_field");
+	var search_field = $("input#search_field");
 
-	$("#admin_search_form").on("submit", function(event){
+	$("#search_form").on("submit", function(event){
     event.preventDefault();
     $.ajax({
       dataType: "script",
@@ -12,7 +12,7 @@ jQuery(function($){
 
   search_field.on("keyup", function() {
     if (search_field.val() === "") {
-      $("#admin_search_form").submit();
+      $("#search_form").submit();
     }
   });
 });

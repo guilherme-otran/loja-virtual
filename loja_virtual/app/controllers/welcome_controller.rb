@@ -13,7 +13,7 @@ class WelcomeController < ApplicationController
     @categories = Category.all
      
     # filter_products
-    paginate_products
+    paginate_products 8
     
     load_cart_items
     

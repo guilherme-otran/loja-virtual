@@ -15,7 +15,7 @@ class ProductsController < ApplicationController
     
     # Initialize @products
     filter_products
-    paginate_products
+    paginate_products 8
     
     # If someone try access from a category link directly,
     # we need load render the cart, and load it.

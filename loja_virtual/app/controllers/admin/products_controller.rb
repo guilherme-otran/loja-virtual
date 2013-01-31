@@ -6,8 +6,12 @@ class Admin::ProductsController < Admin::ApplicationController
   # GET admin/products
   # GET admin/products.json
   def index
+    @categories = Category.all
+    @selected_category = params[:category_id]
+
+    # Initialize @products according to user interaction
     filter_products
-    # paginate_products
+    paginate_products 15
     
     respond_to do |format|
     	format.html { render "index" }
