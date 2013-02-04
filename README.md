@@ -10,17 +10,22 @@
     ```
       git clone https://github.com/guilherme-otran/loja-virtual.git
     ```
-2. Verifique as configurações de conexão com o banco. Por padrão:
+2. Criar as configurações de conexão com o banco (config/database.yml). Para o MySql:
 
 ```
-  adapter: mysql2
-  encoding: utf8
-  reconnect: false
-  database: loja_virtual
-  pool: 5
-  username: root
-  password: 
-  host: localhost
+  development:
+    adapter: mysql2
+    encoding: utf8
+    reconnect: false
+    database: loja_virtual
+    pool: 5
+    username: root
+    password: 
+    host: localhost
+  test:
+    [...]
+  production:
+    [...]
 ```
 
 3. Instalar as dependências:
@@ -60,4 +65,4 @@ Usuário administrador padrão:
 
 Integração com [Moip] (http://moip.com.br):
 
-  Usada a gem [Moiper] (https://github.com/reu/moiper) para a integração do pagamento bancário. É possivel fazer testes livremente atravéz do standbox.
+  Usada a gem [Moiper] (https://github.com/reu/moiper) para a integração do pagamento bancário. É possivel fazer testes livremente atravéz do sandbox.
